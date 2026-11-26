@@ -1,0 +1,16 @@
+[
+  {"model": "notes.workspace", "pk": 1, "fields": {"name": "Alpha"}},
+  {"model": "notes.workspace", "pk": 2, "fields": {"name": "Beta"}},
+  {
+    "model": "notes.note", "pk": 101,
+    "fields": {
+      "workspace": 1, "title": "Release plan", "body": "Alpha private fixture"
+    }
+  },
+  {
+    "model": "notes.note", "pk": 202,
+    "fields": {
+      "workspace": 2, "title": "Pricing review", "body": "Beta private fixture"
+    }
+  }
+]

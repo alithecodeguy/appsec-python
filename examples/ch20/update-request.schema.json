@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Casebook v1 note update request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["expected_version"],
+  "properties": {
+    "title": {"type": "string", "minLength": 1, "maxLength": 200},
+    "state": {"enum": ["open", "archived"]},
+    "expected_version": {"type": "integer", "minimum": 1, "maximum": 9223372036854775807}
+  },
+  "anyOf": [{"required": ["title"]}, {"required": ["state"]}],
+  "$comment": "Server checks also reject blank-only titles, control characters and surrogate code points, require an integer JSON token for expected_version, and enforce membership, versions and transitions."
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "local-source-verification",
+  "design_revision": "CB-EXPORT-41-r1",
+  "record_date": "2026-11-26",
+  "source_commit": null,
+  "built_artifact": null,
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "sqlite": "3.53.1",
+    "cryptography": "50.0.2"
+  },
+  "tests": {
+    "test_capstone": {
+      "run": 20,
+      "passed": 20,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "transcript": "test_A41_01_two_workspace_payloads_and_minimal_status (examples.ch42.test_capstone.CapstoneTests.test_A41_01_two_workspace_payloads_and_minimal_status) ... ok\ntest_A41_02_anonymous_cross_workspace_and_route_substitution (examples.ch42.test_capstone.CapstoneTests.test_A41_02_anonymous_cross_workspace_and_route_substitution) ... ok\ntest_A41_03_validation_normalization_replay_and_conflict (examples.ch42.test_capstone.CapstoneTests.test_A41_03_validation_normalization_replay_and_conflict) ... ok\ntest_A41_04_revoked_while_queued_then_restored_cannot_reopen (examples.ch42.test_capstone.CapstoneTests.test_A41_04_revoked_while_queued_then_restored_cannot_reopen) ... ok\ntest_A41_05_ready_revocation_deactivation_and_inaccessible_selection (examples.ch42.test_capstone.CapstoneTests.test_A41_05_ready_revocation_deactivation_and_inaccessible_selection) ... ok\ntest_A41_06_07_exact_manager_and_member_expiry_matrix (examples.ch42.test_capstone.CapstoneTests.test_A41_06_07_exact_manager_and_member_expiry_matrix) ... ok\ntest_A41_08_exact_expiry_no_cleanup_required_for_denial (examples.ch42.test_capstone.CapstoneTests.test_A41_08_exact_expiry_no_cleanup_required_for_denial) ... ok\ntest_A41_09_two_workers_one_result_and_stable_receipt (examples.ch42.test_capstone.CapstoneTests.test_A41_09_two_workers_one_result_and_stable_receipt) ... ok\ntest_A41_10_cooperative_stop_rolls_back_prepared_ciphertext (examples.ch42.test_capstone.CapstoneTests.test_A41_10_cooperative_stop_rolls_back_prepared_ciphertext) ... ok\ntest_A41_10_deletion_failure_keeps_capacity_and_records_deadline_breach (examples.ch42.test_capstone.CapstoneTests.test_A41_10_deletion_failure_keeps_capacity_and_records_deadline_breach) ... ok\ntest_A41_10_ready_audit_failure_rolls_back_and_retry_creates_once (examples.ch42.test_capstone.CapstoneTests.test_A41_10_ready_audit_failure_rolls_back_and_retry_creates_once) ... ok\ntest_A41_11_deadline_during_preparation_discards_new_ciphertext (examples.ch42.test_capstone.CapstoneTests.test_A41_11_deadline_during_preparation_discards_new_ciphertext) ... ok\ntest_A41_11_expiry_first_stops_late_publication (examples.ch42.test_capstone.CapstoneTests.test_A41_11_expiry_first_stops_late_publication) ... ok\ntest_A41_11_publication_first_then_expiry_cannot_reopen (examples.ch42.test_capstone.CapstoneTests.test_A41_11_publication_first_then_expiry_cannot_reopen) ... ok\ntest_A41_12_message_shape_partition_and_terminal_replay (examples.ch42.test_capstone.CapstoneTests.test_A41_12_message_shape_partition_and_terminal_replay) ... ok\ntest_A41_13_exact_utf8_byte_boundary_and_one_over (examples.ch42.test_capstone.CapstoneTests.test_A41_13_exact_utf8_byte_boundary_and_one_over) ... ok\ntest_A41_13_selection_pending_and_retained_reservations (examples.ch42.test_capstone.CapstoneTests.test_A41_13_selection_pending_and_retained_reservations) ... ok\ntest_A41_14_accept_expire_delete_event_failures_are_not_success (examples.ch42.test_capstone.CapstoneTests.test_A41_14_accept_expire_delete_event_failures_are_not_success) ... ok\ntest_A41_14_collect_audit_and_cipher_integrity_failures_release_nothing (examples.ch42.test_capstone.CapstoneTests.test_A41_14_collect_audit_and_cipher_integrity_failures_release_nothing) ... ok\ntest_A41_15_purge_exact_retention_preserves_nonce_history_and_unique_ids (examples.ch42.test_capstone.CapstoneTests.test_A41_15_purge_exact_retention_preserves_nonce_history_and_unique_ids) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.098s\n\nOK\n"
+    },
+    "test_web": {
+      "run": 3,
+      "passed": 0,
+      "skipped": 3,
+      "failures": 0,
+      "errors": 0,
+      "transcript": "test_A41_01_02_09_session_replay_content_and_cross_workspace (examples.ch42.test_web.WebTests.test_A41_01_02_09_session_replay_content_and_cross_workspace) ... skipped 'Django 6.1.3 unavailable; HTTP/CSRF checks NOT executed'\ntest_A41_07_08_expire_post_and_clock_boundary (examples.ch42.test_web.WebTests.test_A41_07_08_expire_post_and_clock_boundary) ... skipped 'Django 6.1.3 unavailable; HTTP/CSRF checks NOT executed'\ntest_A41_14_csrf_duplicate_json_methods_and_no_store (examples.ch42.test_web.WebTests.test_A41_14_csrf_duplicate_json_methods_and_no_store) ... skipped 'Django 6.1.3 unavailable; HTTP/CSRF checks NOT executed'\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK (skipped=3)\n"
+    }
+  },
+  "demonstrations": {
+    "admission": "[admission]\nsame receipt: True\nrequest rows and reserved slots: 1 1\nRavi requests Alpha: denied\nretry/refusal leave stored state unchanged: True\n",
+    "worker": "[worker]\nboth workers observed no result: True\nworker outcomes: ['created', 'duplicate']\nAlpha/Beta result rows: 2\ncollected workspace and note: 1 101\ncollected workspace and note: 2 202\nduplicate delivery: duplicate\nduplicate state unchanged: True\nMina after revocation: denied\nrefusal leaves stored export state unchanged: True\n",
+    "lifecycle": "[lifecycle]\nat exact expiry: 410 export_unavailable\nexpiry gate needs no cleanup write: True\nfailed cleanup: retry\nstate, reserved, payloads, breach: expired 1 1 1\ncleanup retry: deleted\nreserved, payloads, nonce history: 0 0 1\npurged at retention boundary: True\njob ID never reused: True\n"
+  },
+  "syntax_and_listing_match": true,
+  "sources_sha256": {
+    "examples/ch23/authorization_service.py": "b5d5f071f1892256b6425a2bd29c91efadeedaafa9b3ac306b2e24695b3eea7c",
+    "examples/ch27/export_crypto.py": "1a73f17e8634120180f4228ba570528fb671879ca00ac766b25719bf16ad8eb8",
+    "examples/ch28/cancellation.py": "d19d2c7ceabd6737d5fd2fc530ec02fe14c9b7aa52c5ed19b5bc14f3aece001b",
+    "examples/ch28/export_queue.py": "523f9a459e93170ddfcbe71cdde0719bbf82d0a58ca93ac46c7e1b2d9d857516",
+    "examples/ch42/README.md": "ef3f68d34636bf573f26f7efd35d69c5724a391f7a2e130cd55e9e01e8d8a879",
+    "examples/ch42/capstone.py": "3780eff1186540f7699cb7d8aba7e4dfe6edd966714851bf226077d8c3571438",
+    "examples/ch42/demo.py": "53332617e6656a0d8ce82152df078b00e33d3153e37aa9e8bfbfde09ffc37cff",
+    "examples/ch42/fixtures.py": "453ed1bd44a9778d8219326f829fbff40afc797510b135d92e31a1636c077837",
+    "examples/ch42/requirements-web.txt": "e5bd58a7400eea6892c27d0b9ea3b9083ecbd060f57e1735be066bfd906dcdfe",
+    "examples/ch42/requirements.txt": "8b5c18678b29b5e8e0fb586a35ac1dce3ccd9da321e8f12ace0e118350b4e568",
+    "examples/ch42/test_capstone.py": "e94b3e12777bbd11671f7633d91ec85bacebad6b3d2d38ab7b44cc850a56d1b8",
+    "examples/ch42/test_web.py": "f0667026d06b9e9aab51d773b7cfd524eb9240e3b892899a055917637d4c08ca",
+    "examples/ch42/web.py": "bcda44e7fc0536f5fa2a7eea120f74ae1b65de4f5313e584d7c7c78db59ee8a4",
+    "examples/ch42/workers.py": "46965a94a276c43884806ee5228a355896d5d06acbfcc2360f5b760824003045",
+    "manuscript/chapters/42.md": "ca69d908360369239e24bcd840c110c89af9f30d5a1735757eccf5528e2b6444"
+  },
+  "gaps": [
+    "CPython 3.15.2",
+    "Django 6.1.3 / HTTP / CSRF / session integration",
+    "live broker authentication and provider workload controls",
+    "platform key custody",
+    "backup exclusion / restore / object versions and replicas",
+    "hard crash / physical erasure",
+    "automatic maintenance dispatch / distributed resource budgets",
+    "release artifact and commit binding"
+  ]
+}
