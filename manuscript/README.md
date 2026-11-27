@@ -1,6 +1,6 @@
 # Python for Application Security Engineers
 
-![Cover of Python for Application Security Engineers by AliTheCodeGuy](../cover_image.png)
+<img src="../cover_image.png" alt="Cover of Python for Application Security Engineers by AliTheCodeGuy" width="300">
 
 **From your first Python program to the security review of a running service**
 
