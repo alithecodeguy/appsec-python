@@ -1,0 +1,29 @@
+name: Book correction
+description: Report an incorrect explanation, broken link or unexpected example result.
+title: "[Correction] "
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Chapter and section
+      description: Include a link to the affected page or file.
+      placeholder: "Chapter 02 — Create a project environment"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What needs correcting?
+      description: Describe what you read or ran and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction and environment
+      description: For code problems, include the command, working directory, Python/package versions and output. Use synthetic data and remove secrets.
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested correction or source
+      description: A small fix or a primary-source reference is helpful.

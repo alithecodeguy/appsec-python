@@ -1,5 +1,7 @@
 # Chapter 21: accounts and recovery
 
+[← Chapter 21](../../manuscript/chapters/21.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 The recovery state laboratory requires Python 3.12 or later and uses only the
 standard library. From this directory, use your learning environment's Python:
 

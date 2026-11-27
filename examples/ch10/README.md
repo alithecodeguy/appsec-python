@@ -1,5 +1,7 @@
 # Chapter 10 models and type checking
 
+[← Chapter 10](../../manuscript/chapters/10.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 Use Python 3.12.14 and mypy 2.4.1 from the root tested requirements. Run from this directory:
 
 ```shell

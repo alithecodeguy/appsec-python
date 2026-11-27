@@ -1,5 +1,7 @@
 # Chapter 20 contract laboratory
 
+[← Chapter 20](../../manuscript/chapters/20.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 This local, standard-library model specifies proposed API behavior. It does not
 add HTTP routes to chapter 19 and does not authenticate fixture users.
 It requires Python 3.12 or later for explicit SQLite `autocommit` configuration;

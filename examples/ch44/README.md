@@ -1,5 +1,7 @@
 # Chapter 44 retention and recovery rehearsal
 
+[← Chapter 44](../../manuscript/chapters/44.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 Run from the repository root with Python 3.12+ and chapter 42's core dependency:
 
 ```shell

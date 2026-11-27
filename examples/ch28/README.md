@@ -1,5 +1,7 @@
 # Chapter 28 concurrency laboratory
 
+[← Chapter 28](../../manuscript/chapters/28.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 Run from the repository root with Python 3.12 or later:
 
 ```shell

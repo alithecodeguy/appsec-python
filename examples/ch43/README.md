@@ -1,5 +1,7 @@
 # Chapter 43 candidate review
 
+[← Chapter 43](../../manuscript/chapters/43.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 From the repository root, use Python 3.12+ with the chapter 42 core dependency:
 
 ```shell

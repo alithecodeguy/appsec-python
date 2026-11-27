@@ -1,5 +1,7 @@
 # Chapter 22: sessions and token verification
 
+[← Chapter 22](../../manuscript/chapters/22.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 Use your learning environment's Python from this directory. The edition targets
 CPython 3.12.14; the chapter records the actual available verification runtime.
 

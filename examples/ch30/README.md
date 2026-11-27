@@ -1,5 +1,7 @@
 # Chapter 30 control verification
 
+[← Chapter 30](../../manuscript/chapters/30.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 Use Python 3.12.14, Django 6.1.3 and Hypothesis 6.170.17 from the root tested requirements. Run each command in its own process from the repository root:
 
 ```shell

@@ -1,5 +1,7 @@
 # Chapter 24 browser laboratory
 
+[← Chapter 24](../../manuscript/chapters/24.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 Run from the repository root. Keep chapter 23's `authorization_service.py` at
 `examples/ch23/authorization_service.py`; the browser lab imports it unchanged.
 The edition targets CPython 3.12.14 and Django 6.1.3.

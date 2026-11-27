@@ -1,5 +1,7 @@
 # Chapter 26: integration contracts
 
+[← Chapter 26](../../manuscript/chapters/26.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 From the repository root, with Python 3.12 or later:
 
 ```shell

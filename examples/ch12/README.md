@@ -1,5 +1,7 @@
 # Chapter 12 corrected test companion
 
+[← Chapter 12](../../manuscript/chapters/12.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 Use Python 3.12.14 and pytest 9.2.0 from the root tested requirements. From this directory:
 
 ```shell

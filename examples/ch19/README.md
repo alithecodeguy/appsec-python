@@ -1,5 +1,7 @@
 # Chapter 19: Casebook service
 
+[← Chapter 19](../../manuscript/chapters/19.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 From this directory, using the book's CPython 3.12.14 baseline:
 
 ```shell

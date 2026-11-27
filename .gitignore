@@ -1,0 +1,26 @@
+# Python environments and generated caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local credentials, runtime data and editor/OS files
+.env
+.env.*
+!.env.example
+*.sqlite3
+*.sqlite3-*
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Optional local tooling
+node_modules/

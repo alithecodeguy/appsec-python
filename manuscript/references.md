@@ -1,5 +1,7 @@
 # References and edition records
 
+[Repository](../README.md) · [Contents](README.md#contents) · [Appendices](appendices.md) · [Indexes](indexes.md) · [References](references.md)
+
 Which primary source supports the explanation, and which environment produced the result? This bibliography groups the sources actually cited in chapters 01–44 and the appendices. “Cited in” links lead to a section containing the citation. Duplicate document/fragment links are consolidated into one work record.
 
 Source addresses and publication identities were checked on **2026-11-27**. “Retrieved” means the publisher's named document was available for inspection. It does not mean every statement or API was independently retested. The CVE HTML-access limitation is stated at the end.
@@ -417,3 +419,7 @@ The tested edition ran the suites and demonstrations named in the current report
 For an update, retain the source's owner and edition, its chapter citation, actual environment identity, command/report and unresolved limit. Update a moving documentation reference only after checking the affected examples. Replacing an expected version string or an unavailable-source label does not create execution evidence.
 
 [cve-cna]: https://www.cve.org/ResourcesSupport/AllResources/CNARules/
+
+---
+
+[Repository](../README.md) · [Contents](README.md#contents) · [Appendices](appendices.md) · [Indexes](indexes.md) · [References](references.md)

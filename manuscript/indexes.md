@@ -1,5 +1,7 @@
 # Glossary and indexes
 
+[Repository](../README.md) · [Contents](README.md#contents) · [Appendices](appendices.md) · [Indexes](indexes.md) · [References](references.md)
+
 Where does this book explain the word, rule or API you need? Use the [glossary](#glossary) for a short first meaning, the [subject index](#subject-index) for a topic across the book, and the [Python API and tools index](#python-api-and-tools-index) for an exact code or tool name.
 
 Entries are alphabetical within each section. Chapter numbers identify teaching locations, not every mention of a term. Links go to the section that develops the explanation, example or decision. “Appendix” links go to the completed [appendices](appendices.md). The [solution directory](appendices.md#chapter-solution-directory) is the route to exercise answers.
@@ -408,3 +410,7 @@ Code spelling is preserved. Grouped entries are sorted by the first name; code-f
 | `with` | Python statement | [08 · file lifetime](chapters/08.md#2-own-the-open-file-with-a-with-block); [11 · managed generator lifetime](chapters/11.md#give-a-stream-a-managed-lifetime) | Give file or stream lifetime a clear owner and exit path. |
 | `yield` | Python expression | [11 · yield and resumption](chapters/11.md#a-generator-pauses-at-yield); [11 · managed generator lifetime](chapters/11.md#give-a-stream-a-managed-lifetime) | Pause a generator or hand one resource to a context-managed block. |
 | `zipfile` / `ZipFile` | Standard library | [37 · wheel members and metadata](chapters/37.md#build-and-inspect-the-wheel); [25 · manifest preflight, no extraction](chapters/25.md#worked-example-2-review-a-supplied-manifest) | Inspect actual wheel members in 37; 25 teaches manifest policy and implements no archive extractor. |
+
+---
+
+[Repository](../README.md) · [Contents](README.md#contents) · [Appendices](appendices.md) · [Indexes](indexes.md) · [References](references.md)

@@ -1,5 +1,7 @@
 # Appendices
 
+[Repository](../README.md) · [Contents](README.md#contents) · [Appendices](appendices.md) · [Indexes](indexes.md) · [References](references.md)
+
 Use these four appendices while reading or repeating a lab. [Appendix A](#appendix-a-a-small-rule-three-ways-to-read-it) follows one decision from comparison to regression check. [Appendix B](#appendix-b-a-reference-shelf-for-python) helps locate language/API details. [Appendix C](#appendix-c-lab-notebook-and-answer-key) records a complete worked run and links to every chapter's solutions. [Appendix D](#appendix-d-standards-and-verification-map) connects verified external identifiers to specific controls and bounded evidence.
 
 The edition baseline is **CPython 3.12.14**, with **Django 6.1.3** for web integration. The short appendix programs below actually ran on **CPython 3.12.14**; the database notebook used **SQLite 3.53.1**. Each chapter records its own runtime and unexecuted paths. The appendix does not upgrade an earlier example's evidence or lift the capstone's production HOLD.
@@ -462,3 +464,7 @@ The three membership forms and worked notebook ran with the recorded runtime. Th
 ASVS 5.0.0 identifiers were checked against its versioned authorization/data-protection files. Top 10:2025 and API Top 10:2023 category codes were checked against their official lists; SSDF task codes against SP 800-218 version 1.1; SAMM names, CWE entries and CVSS version against their official sources. This is a verified cross-reference, not a fresh standards certification or a claim that every mapped requirement passed.
 
 The appendix programs run on the tested CPython 3.12.14 baseline. Framework results are recorded in the relevant chapters. Earlier framework/provider/key-custody/retention gaps remain as recorded in the linked chapters. These appendices supply navigation and bounded learning evidence, not a production-readiness verdict.
+
+---
+
+[Repository](../README.md) · [Contents](README.md#contents) · [Appendices](appendices.md) · [Indexes](indexes.md) · [References](references.md)

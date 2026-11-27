@@ -1,5 +1,7 @@
 # Chapter 27 cryptographic laboratory
 
+[← Chapter 27](../../manuscript/chapters/27.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 Run from the repository root using Python 3.12 or later:
 
 ```shell

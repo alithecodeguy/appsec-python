@@ -1,5 +1,7 @@
 # Chapter 42 private-export capstone
 
+[← Chapter 42](../../manuscript/chapters/42.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 Run from the repository root with Python 3.12 or later. Preserve chapters 23,
 27 and 28. No earlier file or database needs modification.
 
@@ -33,5 +35,5 @@ reviewed authentication, persistent key custody and actual hosting controls.
 Recorded locally: 20 core methods and three Django HTTP methods passed on Python
 3.12.14 and Django 6.1.3, with zero skips. Deployed HTTP/TLS, provider workload controls,
 backup exclusion/restore and removal of object versions/replicas were not tested.
-See verification.json and manuscript/chapters/42.md for evidence and limits.
+See [verification.json](verification.json) and [chapter 42](../../manuscript/chapters/42.md) for evidence and limits.
 The local SQL deletion result is not forensic erasure or a provider deletion claim.

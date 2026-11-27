@@ -1,5 +1,7 @@
 # Chapter 25 attachment laboratory
 
+[← Chapter 25](../../manuscript/chapters/25.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 Run from the repository root with Python 3.12 or later:
 
 ```shell

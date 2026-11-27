@@ -1,0 +1,15 @@
+name: Book improvement
+description: Suggest a clearer explanation, exercise or reading improvement.
+title: "[Improvement] "
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Relevant chapter or page
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: What would help the reader?
+      description: Describe the difficulty and your suggested improvement.
+    validations:
+      required: true

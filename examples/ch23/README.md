@@ -1,5 +1,7 @@
 # Chapter 23: authorization laboratory
 
+[← Chapter 23](../../manuscript/chapters/23.md) · [All examples](../README.md) · [Tested versions](../../tested-versions.md)
+
 From this directory, use your learning environment's Python (3.12 or later):
 
 ```shell
