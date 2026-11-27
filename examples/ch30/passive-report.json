@@ -1,0 +1,27 @@
+{
+  "capture_id": "P30-01",
+  "provenance": "authored teaching fixture",
+  "candidate": "casebook-ch30-report-only-example",
+  "collection": {
+    "mode": "passive review of supplied response metadata",
+    "scanner_run": false,
+    "observed_messages": 1,
+    "other_identities_or_routes_observed": false,
+    "tls_verified": false
+  },
+  "request": {
+    "method": "GET",
+    "path": "/workspaces/1/notes/",
+    "identity_label": "Mina, synthetic fixture",
+    "transport_label": "HTTPS; illustrative, not measured"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "Cache-Control": "no-store",
+      "Content-Security-Policy-Report-Only": "default-src 'none'; script-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'"
+    },
+    "body_included": false
+  }
+}

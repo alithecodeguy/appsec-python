@@ -1,9 +1,9 @@
 # Chapter 19: Casebook service
 
-From this directory, using the book's CPython 3.15.2 baseline:
+From this directory, using the book's CPython 3.12.14 baseline:
 
 ```shell
-python3.15 -m venv .venv
+"$HOME/.local/bin/python3.12" -m venv .venv
 ./.venv/bin/python -m pip install -r requirements.txt
 ./.venv/bin/python manage.py check
 ./.venv/bin/python manage.py migrate
@@ -37,7 +37,7 @@ Run the ORM example once after seeding:
 It creates multilingual note `103`. A second run fails validation because that
 ID already exists. The chapter explains this boundary and a controlled cleanup.
 
-On Windows use `py -3.15 -m venv .venv`, then replace `./.venv/bin/python`
+On Windows use `& $CasebookPython -m venv .venv`, then replace `./.venv/bin/python`
 with `.\.venv\Scripts\python.exe`. Pipe the demo with
 `Get-Content -Encoding utf8 orm_demo.py | .\.venv\Scripts\python.exe manage.py shell`.
 

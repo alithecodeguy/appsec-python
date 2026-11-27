@@ -4,7 +4,8 @@
 
 A private note belongs to one workspace. Who can read it? What happens after a member leaves? How would an engineer prove that the rule still works after a release? This book follows those questions from a few lines of Python to a working web application.
 
-**Edition baseline** · CPython 3.15.2 · 26 November 2026  
+**Edition baseline** · CPython 3.12.14 · 27 November 2026
+
 **Reader** · First-time programmers and engineers entering AppSec  
 **Manuscript** · English Markdown
 
@@ -50,7 +51,7 @@ In **Casebook**, Alpha and Beta are separate customer workspaces. Mina is an Alp
 
 Each chapter entry in this syllabus names a result, four sections, two example ideas and a practical check. The full chapter will add runnable listings, expected output, a guided exercise, independent practice, common mistakes and answers. Chapter numbers serve as stable locators while the manuscript is being written.
 
-**Edition note.** The language baseline is CPython 3.15.2, released 25 October 2026. Web chapters use the Django 6.1 series with a supported patch that includes Python 3.15 compatibility, first added in Django 6.1.3. Record the actual framework and tool patches when testing each chapter. [Python release record](https://www.python.org/downloads/release/python-3152/) · [Django compatibility record](https://docs.djangoproject.com/en/6.1/releases/6.1.3/)
+**Edition note.** The language baseline is the tested **CPython 3.12.14** runtime. Web examples use **Django 6.1.3** on Python 3.12. The tested environment also pins pytest 9.2.0, mypy 2.4.1, PyJWT 2.15.1, Hypothesis 6.170.17 and cryptography 50.0.2. Use [the version record](tested-versions.md) and [tested requirements](requirements-tested.txt); browser, provider and production evidence remains separate. [Python release record](https://www.python.org/downloads/release/python-31214/) · [Django release record](https://docs.djangoproject.com/en/6.1/releases/6.1.3/)
 
 ## Contents
 
@@ -884,7 +885,7 @@ A successful run adds no output. If an assertion fails, Python reports the line.
 | Model an interface | 06, 10 | Callable signatures, `Protocol`, type aliases and data classes |
 | Compare timestamps or durations | 22, 33, 36 | Aware UTC datetimes and monotonic elapsed time |
 
-**Further language study.** Once ordinary code is comfortable, compare pattern matching with a decision table, composition with inheritance, and a context manager with explicit cleanup. Explore the 3.15 UTF-8 default alongside explicit file encodings in chapter 07. Check language changes against the versioned guide. [Python 3.15 changes](https://docs.python.org/3.15/whatsnew/3.15.html)
+**Further language study.** Once ordinary code is comfortable, compare pattern matching with a decision table, composition with inheritance, and a context manager with explicit cleanup. Explore the Python 3.12 text-encoding defaults alongside explicit file encodings in chapter 07. Check language changes against the versioned guide. [Python 3.12 changes](https://docs.python.org/3.12/whatsnew/3.12.html)
 
 ## Appendix C. Lab notebook and answer key
 
@@ -1066,11 +1067,11 @@ Use these short meanings on a first reading. The chapter link gives the idea in 
 
 The edition records below were consulted on 26 November 2026. Use the versioned language and framework documentation for API behavior. Prefer the project's own release or specification when updating a chapter.
 
-**Python.** Release number and date, supported branches, language reference, standard library and changes in the edition. [Python 3.15.2 release](https://www.python.org/downloads/release/python-3152/) · [Supported versions](https://devguide.python.org/versions/) · [Python 3.15 documentation](https://docs.python.org/3.15/) · [What's new](https://docs.python.org/3.15/whatsnew/3.15.html)
+**Python.** Release number and date, supported branches, language reference, standard library and changes in the edition. [Python 3.12.14 release](https://www.python.org/downloads/release/python-31214/) · [Supported versions](https://devguide.python.org/versions/) · [Python 3.12 documentation](https://docs.python.org/3.12/) · [What's new](https://docs.python.org/3.12/whatsnew/3.12.html)
 
 **Packaging and testing.** Build metadata, fixtures and property-based test design. [Python Packaging User Guide](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/) · [pytest documentation](https://docs.pytest.org/en/stable/) · [Hypothesis documentation](https://hypothesis.readthedocs.io/en/latest/)
 
-**Django.** Python 3.15 compatibility and the framework's documented security features. [Django 6.1.3 release notes](https://docs.djangoproject.com/en/6.1/releases/6.1.3/) · [Security in Django 6.1](https://docs.djangoproject.com/en/6.1/topics/security/)
+**Django.** The selected 6.1.3 patch and the framework's documented security features. [Django 6.1.3 release notes](https://docs.djangoproject.com/en/6.1/releases/6.1.3/) · [Security in Django 6.1](https://docs.djangoproject.com/en/6.1/topics/security/)
 
 **Application and API security.** Requirements, risk categories and implementation guidance. [OWASP ASVS](https://asvs.owasp.org/) · [OWASP Top 10:2025](https://top10.owasp.org/2025/) · [OWASP API Security Top 10 (2023)](https://owasp.org/API-Security/editions/2023/en/0x11-t10/) · [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/)
 

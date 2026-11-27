@@ -30,8 +30,8 @@ It is not a standalone deployed login server. Dummy keys are process-local and
 cannot support persistent service restarts. The adapter must be integrated with
 reviewed authentication, persistent key custody and actual hosting controls.
 
-Recorded locally: 20 core tests passed; three web tests skipped because Django
-was unavailable. Python 3.15.2, deployed HTTP/TLS, provider workload controls,
+Recorded locally: 20 core methods and three Django HTTP methods passed on Python
+3.12.14 and Django 6.1.3, with zero skips. Deployed HTTP/TLS, provider workload controls,
 backup exclusion/restore and removal of object versions/replicas were not tested.
 See verification.json and manuscript/chapters/42.md for evidence and limits.
 The local SQL deletion result is not forensic erasure or a provider deletion claim.

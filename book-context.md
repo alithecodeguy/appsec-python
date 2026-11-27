@@ -10,7 +10,7 @@ For example, Mina signs in successfully and then tries to open a Beta note. Sign
 
 ## Edition and running project
 
-- The edition targets CPython 3.15, with 3.15.2 as its baseline. The web chapters use Django 6.1 with a compatible patch. Record the exact versions used for examples that depend on version-specific behavior. [Python release](https://www.python.org/downloads/release/python-3152/) · [Django compatibility](https://docs.djangoproject.com/en/6.1/releases/6.1.3/)
+- The tested language baseline is **CPython 3.12.14**. Web examples use **Django 6.1.3** on that interpreter. Use the exact tested packages in [requirements-tested.txt](requirements-tested.txt) and the commands/results in [tested-versions.md](tested-versions.md). Record exact versions and the boundary actually exercised; a passing local test does not establish browser or deployment behavior.
 - Casebook stores private team notes. Mina belongs to Alpha, Ravi belongs to Beta and Lee manages Alpha. A visitor is anonymous. Use fictional records, including a non-English title when encoding matters.
 - A reader must be an active member of the note's workspace at the time of a read. Lee manages only Alpha. A background export checks current permission again before it releases private data. Chapters 41–44 build and verify this feature.
 - Begin with standalone Python. Introduce pytest in chapter 12, SQLite in 15, Django in 19 and a background worker in 28. Early examples may use a set of memberships. Later service examples load memberships from trusted records.

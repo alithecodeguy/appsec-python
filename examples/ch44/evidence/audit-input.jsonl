@@ -1,0 +1,35 @@
+{"source": "application", "at": 1795687200, "event_id": 1, "job_id": 1, "workspace_id": 1, "outcome": "accepted", "at_utc": "2026-11-26T10:00:00Z"}
+{"source": "application", "at": 1795687205, "event_id": 3, "job_id": 1, "workspace_id": 1, "outcome": "ready", "at_utc": "2026-11-26T10:00:05Z"}
+{"source": "harness", "at": 1795687207, "outcome": "unsafe_backup_created", "payload_rows": 2, "backup_is_negative_control": true, "at_utc": "2026-11-26T10:00:07Z"}
+{"source": "harness", "at": 1795687210, "outcome": "membership_revoked", "workspace_id": 1, "user_id": 1, "at_utc": "2026-11-26T10:00:10Z"}
+{"source": "harness", "at": 1795687259, "outcome": "controlled_collection", "probe": "ravi_before_expiry", "status": 200, "workspace_id": 2, "note_ids": [202], "at_utc": "2026-11-26T10:00:59Z"}
+{"source": "harness", "at": 1795687260, "outcome": "controlled_collection", "probe": "ravi_at_expiry", "status": 410, "bytes_returned": 0, "at_utc": "2026-11-26T10:01:00Z"}
+{"source": "application", "at": 1795687261, "event_id": 7, "job_id": 2, "workspace_id": 2, "outcome": "deleted", "at_utc": "2026-11-26T10:01:01Z"}
+{"source": "application", "at": 1795687262, "event_id": 9, "job_id": 1, "workspace_id": 1, "outcome": "delete_failed", "at_utc": "2026-11-26T10:01:02Z"}
+{"source": "harness", "at": 1795688161, "outcome": "admission_paused", "status": 503, "at_utc": "2026-11-26T10:16:01Z"}
+{"source": "harness", "at": 1795688170, "outcome": "synthetic_fault_removed", "at_utc": "2026-11-26T10:16:10Z"}
+{"source": "harness", "at": 1795688173, "outcome": "unsafe_restore_quarantined", "stale_mina_active": true, "restored_payload_rows": 2, "at_utc": "2026-11-26T10:16:13Z"}
+{"source": "harness", "at": 1795688174, "outcome": "current_facts_reconciled", "restored_payload_rows": 0, "nonce_rows": 3, "at_utc": "2026-11-26T10:16:14Z"}
+{"source": "application", "at": 1795688175, "event_id": 13, "job_id": 3, "workspace_id": 2, "outcome": "ready", "at_utc": "2026-11-26T10:16:15Z"}
+{"source": "harness", "at": 1795688175, "outcome": "controlled_collection", "probe": "recovered_mina", "status": 404, "bytes_returned": 0, "at_utc": "2026-11-26T10:16:15Z"}
+{"source": "harness", "at": 1795688175, "outcome": "controlled_collection", "probe": "lee_beta", "status": 404, "bytes_returned": 0, "at_utc": "2026-11-26T10:16:15Z"}
+{"source": "harness", "at": 1795688175, "outcome": "controlled_collection", "probe": "recovered_ravi_fresh", "status": 200, "workspace_id": 2, "note_ids": [202], "at_utc": "2026-11-26T10:16:15Z"}
+{"source": "harness", "at": 1795688176, "outcome": "unsafe_backup_removed", "backup_exists": false, "at_utc": "2026-11-26T10:16:16Z"}
+{"source": "application", "at": 1795688235, "event_id": 16, "job_id": 3, "workspace_id": 2, "outcome": "deleted", "at_utc": "2026-11-26T10:17:15Z"}
+{"source": "application", "at": 1795687200, "event_id": 2, "job_id": 2, "workspace_id": 2, "outcome": "accepted", "at_utc": "2026-11-26T10:00:00Z"}
+{"source": "application", "at": 1795687206, "event_id": 4, "job_id": 2, "workspace_id": 2, "outcome": "ready", "at_utc": "2026-11-26T10:00:06Z"}
+{"source": "harness", "at": 1795687208, "outcome": "dummy_key_rotation", "nonce_rows": 3, "at_utc": "2026-11-26T10:00:08Z"}
+{"source": "application", "at": 1795687259, "event_id": 5, "job_id": 2, "workspace_id": 2, "outcome": "collect_authorized", "at_utc": "2026-11-26T10:00:59Z"}
+{"source": "harness", "at": 1795687260, "outcome": "controlled_collection", "probe": "mina_after_revocation", "status": 404, "bytes_returned": 0, "at_utc": "2026-11-26T10:01:00Z"}
+{"source": "application", "at": 1795687261, "event_id": 6, "job_id": 2, "workspace_id": 2, "outcome": "expired", "at_utc": "2026-11-26T10:01:01Z"}
+{"source": "application", "at": 1795687262, "event_id": 8, "job_id": 1, "workspace_id": 1, "outcome": "expired", "at_utc": "2026-11-26T10:01:02Z"}
+{"source": "harness", "at": 1795688161, "outcome": "retention_detected", "overdue": true, "stored_breach_flag": 0, "unsafe_backup_payloads": 2, "at_utc": "2026-11-26T10:16:01Z"}
+{"source": "application", "at": 1795688162, "event_id": 10, "job_id": 1, "workspace_id": 1, "outcome": "delete_failed", "at_utc": "2026-11-26T10:16:02Z"}
+{"source": "application", "at": 1795688171, "event_id": 11, "job_id": 1, "workspace_id": 1, "outcome": "deleted", "at_utc": "2026-11-26T10:16:11Z"}
+{"source": "harness", "at": 1795688173, "outcome": "controlled_collection", "probe": "stale_restore_at_real_time", "status": 410, "bytes_returned": 0, "at_utc": "2026-11-26T10:16:13Z"}
+{"source": "application", "at": 1795688175, "event_id": 12, "job_id": 3, "workspace_id": 2, "outcome": "accepted", "at_utc": "2026-11-26T10:16:15Z"}
+{"source": "application", "at": 1795688175, "event_id": 14, "job_id": 3, "workspace_id": 2, "outcome": "collect_authorized", "at_utc": "2026-11-26T10:16:15Z"}
+{"source": "harness", "at": 1795688175, "outcome": "controlled_collection", "probe": "recovered_ravi_old_export", "status": 410, "bytes_returned": 0, "at_utc": "2026-11-26T10:16:15Z"}
+{"source": "harness", "at": 1795688175, "outcome": "controlled_collection", "probe": "anonymous_alpha", "status": 403, "bytes_returned": 0, "at_utc": "2026-11-26T10:16:15Z"}
+{"source": "harness", "at": 1795688175, "outcome": "controlled_collection", "probe": "mina_beta_fresh", "status": 404, "bytes_returned": 0, "at_utc": "2026-11-26T10:16:15Z"}
+{"source": "application", "at": 1795688235, "event_id": 15, "job_id": 3, "workspace_id": 2, "outcome": "expired", "at_utc": "2026-11-26T10:17:15Z"}

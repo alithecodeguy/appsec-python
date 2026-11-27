@@ -1,0 +1,40 @@
+{
+  "evidence_kind": "authored actual source inspection; not scanner output or independent approval",
+  "source_commit": "2c79fe0806a5a788e79afbd0adbc1c4a495a9a5d",
+  "artifact_sha256": "ed326bc772909f0dbe064d454488190927593bf18671e6a3c67ac7f017523a5f",
+  "source_locations_refer_to": "files in candidate-source.zip at source_commit",
+  "observations": [
+    {
+      "id": "REV43-01",
+      "location": "examples/ch42/web.py:32",
+      "result": "production_blocker",
+      "fact": "The adapter contains the public fixture SECRET_KEY literal.",
+      "scope": "Intentional test configuration; cannot be accepted as production secret custody.",
+      "proposed_owner": "Sam / Owen"
+    },
+    {
+      "id": "REV43-02",
+      "location": "examples/ch42/web.py:18; examples/ch42/fixtures.py::dummy_keyrings",
+      "result": "production_blocker",
+      "fact": "Import creates fresh process-local dummy export keys; no persistent custody is implemented.",
+      "scope": "A restarted persistent service cannot assume existing ciphertext remains decryptable.",
+      "proposed_owner": "Owen"
+    },
+    {
+      "id": "REV43-03",
+      "location": "examples/ch42/capstone.py:236,272",
+      "result": "operational_gap",
+      "fact": "Cleanup and purge are callable operations with no automatic maintenance dispatcher in this candidate.",
+      "scope": "Local unit tests do not demonstrate the fifteen-minute removal service deadline.",
+      "proposed_owner": "Owen"
+    },
+    {
+      "id": "REV43-04",
+      "location": "examples/ch42/capstone.py:283; examples/ch42/web.py:117",
+      "result": "source_review_closed_candidate",
+      "fact": "snapshot SQL table names come from a closed local tuple, and urlpatterns expose no snapshot route.",
+      "scope": "No request-data flow to those identifiers was found; does not claim all SQL or deployment routes are verified.",
+      "proposed_owner": "Sam / Tess"
+    }
+  ]
+}

@@ -1,0 +1,556 @@
+{
+  "record_kind": "actual local book verification",
+  "collected_at_utc": "2026-11-27T00:25:55.154913+00:00",
+  "runtime": {
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "python_openssl": "OpenSSL 3.5.8 25 Aug 2026",
+    "cryptography_openssl": "OpenSSL 4.0.3 29 Sep 2026"
+  },
+  "packages": {
+    "Django": "6.1.3",
+    "PyJWT": "2.15.1",
+    "Pygments": "2.21.0",
+    "asgiref": "3.13.0",
+    "ast_serialize": "0.13.1",
+    "cffi": "2.1.1",
+    "cryptography": "50.0.2",
+    "hypothesis": "6.170.17",
+    "iniconfig": "2.3.1",
+    "librt": "0.17.0",
+    "mypy": "2.4.1",
+    "mypy_extensions": "1.2.0",
+    "packaging": "26.4",
+    "pathspec": "1.1.1",
+    "pip": "26.2.2",
+    "pluggy": "1.7.0",
+    "pycparser": "3.12",
+    "pytest": "9.2.0",
+    "setuptools": "84.2.1",
+    "sortedcontainers": "2.4.0",
+    "sqlparse": "0.6.1",
+    "typing_extensions": "4.16.0",
+    "wheel": "0.48.0"
+  },
+  "commands": {
+    "mypy_accept": {
+      "command": [
+        "python",
+        "-m",
+        "mypy",
+        "--strict",
+        "checked_types.py"
+      ],
+      "cwd": "examples/ch10",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": null,
+      "stdout": "Success: no issues found in 1 source file\n",
+      "stderr": ""
+    },
+    "mypy_refuse": {
+      "command": [
+        "python",
+        "-m",
+        "mypy",
+        "--strict",
+        "bad_types.py"
+      ],
+      "cwd": "examples/ch10",
+      "expected_exit": 1,
+      "exit_code": 1,
+      "matched_expectation": true,
+      "test_methods": null,
+      "stdout": "bad_types.py:3: error: Argument \"owner_id\" to \"NoteDraft\" has incompatible type \"str\"; expected \"int | None\"  [arg-type]\nbad_types.py:7: error: Incompatible return value type (got \"int | None\", expected \"int\")  [return-value]\nFound 2 errors in 1 file (checked 1 source file)\n",
+      "stderr": ""
+    },
+    "pytest12": {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "cwd": "examples/ch12",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 30,
+      "stdout": "..............................                                           [100%]\n30 passed in 0.12s\n",
+      "stderr": ""
+    },
+    "django19_check": {
+      "command": [
+        "python",
+        "manage.py",
+        "check"
+      ],
+      "cwd": "examples/ch19",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": null,
+      "stdout": "System check identified no issues (0 silenced).\n",
+      "stderr": ""
+    },
+    "django19_migrations": {
+      "command": [
+        "python",
+        "manage.py",
+        "makemigrations",
+        "--check",
+        "--dry-run"
+      ],
+      "cwd": "examples/ch19",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": null,
+      "stdout": "No changes detected\n",
+      "stderr": ""
+    },
+    "django19_tests": {
+      "command": [
+        "python",
+        "manage.py",
+        "test",
+        "notes",
+        "-v",
+        "2"
+      ],
+      "cwd": "examples/ch19",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 9,
+      "stdout": "Found 9 test(s).\nOperations to perform:\n  Apply all migrations: notes\nRunning migrations:\n  Applying notes.0001_initial... OK\nSystem check identified no issues (0 silenced).\n",
+      "stderr": "Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...\ntest_anonymous_cannot_read_note_content (notes.tests.ServiceTests.test_anonymous_cannot_read_note_content) ... ok\ntest_anonymous_health_is_public_and_contains_no_note_data (notes.tests.ServiceTests.test_anonymous_health_is_public_and_contains_no_note_data) ... ok\ntest_health_rejects_post (notes.tests.ServiceTests.test_health_rejects_post) ... ok\ntest_reloading_seed_preserves_fixture_state (notes.tests.ServiceTests.test_reloading_seed_preserves_fixture_state) ... ok\ntest_seed_has_two_workspaces_and_private_notes (notes.tests.ServiceTests.test_seed_has_two_workspaces_and_private_notes) ... ok\ntest_unicode_note_round_trip_and_private_default (notes.tests.ServiceTests.test_unicode_note_round_trip_and_private_default) ... ok\ntest_validation_rejects_an_empty_title_before_write (notes.tests.ServiceTests.test_validation_rejects_an_empty_title_before_write) ... ok\ntest_workspace_filter_requires_both_identifiers (notes.tests.ServiceTests.test_workspace_filter_requires_both_identifiers) ... ok\ntest_workspace_with_notes_cannot_be_deleted (notes.tests.ServiceTests.test_workspace_with_notes_cannot_be_deleted) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.017s\n\nOK\nDestroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...\n"
+    },
+    "django19_live": {
+      "command": [
+        "python",
+        "examples/verify_book.py",
+        "--live19"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": null,
+      "stdout": "{\"health\": 200, \"anonymous_note\": 404, \"workspace_rows\": 2, \"note_ids\": [101, 103, 202], \"orm_and_http\": \"passed\", \"transport\": \"loopback HTTP; no TLS/browser claim\"}\n",
+      "stderr": ""
+    },
+    "password21": {
+      "command": [
+        "python",
+        "django_passwords.py"
+      ],
+      "cwd": "examples/ch21",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": null,
+      "stdout": "Django: 6.1.3\ncorrect password: True\nwrong password: False\nsame password, different encoding: True\nalgorithm: pbkdf2_sha256\nwork factor: 1500000\nsuccessful sign-in: True\ndisabled account denied: True\n",
+      "stderr": ""
+    },
+    "recovery21": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_recovery"
+      ],
+      "cwd": "examples/ch21",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 9,
+      "stdout": "",
+      "stderr": "test_changed_credential_or_disabled_account_invalidates_old_link (test_recovery.RecoveryTests.test_changed_credential_or_disabled_account_invalidates_old_link) ... ok\ntest_exact_expiry_and_after_expiry_refuse_without_writes (test_recovery.RecoveryTests.test_exact_expiry_and_after_expiry_refuse_without_writes) ... ok\ntest_just_before_expiry_succeeds_and_replay_does_not_write (test_recovery.RecoveryTests.test_just_before_expiry_succeeds_and_replay_does_not_write) ... ok\ntest_known_unknown_and_ineligible_have_same_public_response (test_recovery.RecoveryTests.test_known_unknown_and_ineligible_have_same_public_response) ... ok\ntest_malformed_and_unknown_tokens_have_same_failure (test_recovery.RecoveryTests.test_malformed_and_unknown_tokens_have_same_failure) ... ok\ntest_missing_validated_replacement_does_not_consume_link (test_recovery.RecoveryTests.test_missing_validated_replacement_does_not_consume_link) ... ok\ntest_request_does_not_change_password_or_session_epoch (test_recovery.RecoveryTests.test_request_does_not_change_password_or_session_epoch) ... ok\ntest_storage_failure_rolls_back_password_and_token_state (test_recovery.RecoveryTests.test_storage_failure_rolls_back_password_and_token_state) ... ok\ntest_success_revokes_other_outstanding_links (test_recovery.RecoveryTests.test_success_revokes_other_outstanding_links) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.021s\n\nOK\n"
+    },
+    "claims22": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_claims"
+      ],
+      "cwd": "examples/ch22",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 7,
+      "stdout": "",
+      "stderr": "test_expiry_boundary_with_controlled_time (test_claims.ClaimPolicyTests.test_expiry_boundary_with_controlled_time) ... ok\ntest_future_time_and_long_lifetime (test_claims.ClaimPolicyTests.test_future_time_and_long_lifetime) ... ok\ntest_issuer_and_client_are_fixed (test_claims.ClaimPolicyTests.test_issuer_and_client_are_fixed) ... ok\ntest_subject_and_scope_do_not_expand (test_claims.ClaimPolicyTests.test_subject_and_scope_do_not_expand) ... ok\ntest_time_types_are_strict_and_expiry_is_required (test_claims.ClaimPolicyTests.test_time_types_are_strict_and_expiry_is_required) ... ok\ntest_valid_fixture (test_claims.ClaimPolicyTests.test_valid_fixture) ... ok\ntest_wrong_audience (test_claims.ClaimPolicyTests.test_wrong_audience) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n"
+    },
+    "jwt22": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_jwt"
+      ],
+      "cwd": "examples/ch22",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 6,
+      "stdout": "",
+      "stderr": "test_key_rotation_accepts_overlap_then_refuses_retired_key (test_jwt.JWTTests.test_key_rotation_accepts_overlap_then_refuses_retired_key) ... ok\ntest_signed_expired_and_exact_expiry_are_refused (test_jwt.JWTTests.test_signed_expired_and_exact_expiry_are_refused) ... ok\ntest_signed_wrong_audience_is_refused (test_jwt.JWTTests.test_signed_wrong_audience_is_refused) ... ok\ntest_valid_signature_and_claims (test_jwt.JWTTests.test_valid_signature_and_claims) ... ok\ntest_wrong_signature_and_unknown_key_are_refused (test_jwt.JWTTests.test_wrong_signature_and_unknown_key_are_refused) ... ok\ntest_wrong_type_issuer_and_missing_expiry_are_refused (test_jwt.JWTTests.test_wrong_type_issuer_and_missing_expiry_are_refused) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.043s\n\nOK\n"
+    },
+    "sessions22": {
+      "command": [
+        "python",
+        "django_sessions.py"
+      ],
+      "cwd": "examples/ch22",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": null,
+      "stdout": "Django: 6.1.3\nsession rotated: True\nold session removed: True\nnew session authenticated: True\ncookie flags: True True Lax\nold session refused after password change: True\nlogout removed server session: True\nlogged-out session refused: True\n",
+      "stderr": ""
+    },
+    "browser24": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "examples.ch24.test_browser"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 9,
+      "stdout": "",
+      "stderr": "test_escaped_source_and_parsed_text (examples.ch24.test_browser.BrowserTests.test_escaped_source_and_parsed_text) ... ok\ntest_headers_cookie_flags_and_absent_cors_permission (examples.ch24.test_browser.BrowserTests.test_headers_cookie_flags_and_absent_cors_permission) ... ok\ntest_login_requires_csrf_and_private_reads_require_identity (examples.ch24.test_browser.BrowserTests.test_login_requires_csrf_and_private_reads_require_identity) ... ok\ntest_missing_token_refuses_with_valid_session_and_no_write (examples.ch24.test_browser.BrowserTests.test_missing_token_refuses_with_valid_session_and_no_write) ... ok\ntest_real_login_and_two_workspace_object_matrix (examples.ch24.test_browser.BrowserTests.test_real_login_and_two_workspace_object_matrix) ... ok\ntest_revocation_affects_next_get_and_post_with_same_session (examples.ch24.test_browser.BrowserTests.test_revocation_affects_next_get_and_post_with_same_session) ... ok\ntest_valid_change_and_stale_repeat_inspect_stored_state (examples.ch24.test_browser.BrowserTests.test_valid_change_and_stale_repeat_inspect_stored_state) ... ok\ntest_valid_csrf_does_not_authorize_another_workspace (examples.ch24.test_browser.BrowserTests.test_valid_csrf_does_not_authorize_another_workspace) ... ok\ntest_wrong_origin_refuses_even_with_valid_token (examples.ch24.test_browser.BrowserTests.test_wrong_origin_refuses_even_with_valid_token) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 1.915s\n\nOK\n"
+    },
+    "http30": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "examples.ch30.test_http"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 4,
+      "stdout": "",
+      "stderr": "test_generated_lists_match_current_workspace (examples.ch30.test_http.HttpVerificationTests.test_generated_lists_match_current_workspace) ... ok\ntest_other_workspace_anonymous_and_revoked_session (examples.ch30.test_http.HttpVerificationTests.test_other_workspace_anonymous_and_revoked_session) ... ok\ntest_response_policy_on_success_and_denials (examples.ch30.test_http.HttpVerificationTests.test_response_policy_on_success_and_denials) ... ok\ntest_status_json_fields_unicode_and_method_contract (examples.ch30.test_http.HttpVerificationTests.test_status_json_fields_unicode_and_method_contract) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 2.012s\n\nOK\n"
+    },
+    "local30": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "examples.ch30.test_local"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 6,
+      "stdout": "",
+      "stderr": "test_bounded_layouts_at_the_service_boundary (examples.ch30.test_local.LocalVerificationTests.test_bounded_layouts_at_the_service_boundary) ... ok\ntest_csp_does_not_replace_no_store (examples.ch30.test_local.LocalVerificationTests.test_csp_does_not_replace_no_store) ... ok\ntest_current_membership_changes_the_next_service_read (examples.ch30.test_local.LocalVerificationTests.test_current_membership_changes_the_next_service_read) ... ok\ntest_exact_enforced_header_and_weaker_variants (examples.ch30.test_local.LocalVerificationTests.test_exact_enforced_header_and_weaker_variants) ... ok\ntest_negative_control_leaks_despite_conforming_header_values (examples.ch30.test_local.LocalVerificationTests.test_negative_control_leaks_despite_conforming_header_values) ... ok\ntest_supplied_report_only_observation_fails_enforcement_requirement (examples.ch30.test_local.LocalVerificationTests.test_supplied_report_only_observation_fails_enforcement_requirement) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.137s\n\nOK\n"
+    },
+    "shrink30": {
+      "command": [
+        "python",
+        "-m",
+        "examples.ch30.shrink_demo"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": null,
+      "stdout": "WorkspaceCase(alpha=1, beta=2, notes=(NoteRecord(id=1, workspace_id=2, title='<'),))\n",
+      "stderr": ""
+    },
+    "core42": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "examples.ch42.test_capstone"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 20,
+      "stdout": "",
+      "stderr": "test_A41_01_two_workspace_payloads_and_minimal_status (examples.ch42.test_capstone.CapstoneTests.test_A41_01_two_workspace_payloads_and_minimal_status) ... ok\ntest_A41_02_anonymous_cross_workspace_and_route_substitution (examples.ch42.test_capstone.CapstoneTests.test_A41_02_anonymous_cross_workspace_and_route_substitution) ... ok\ntest_A41_03_validation_normalization_replay_and_conflict (examples.ch42.test_capstone.CapstoneTests.test_A41_03_validation_normalization_replay_and_conflict) ... ok\ntest_A41_04_revoked_while_queued_then_restored_cannot_reopen (examples.ch42.test_capstone.CapstoneTests.test_A41_04_revoked_while_queued_then_restored_cannot_reopen) ... ok\ntest_A41_05_ready_revocation_deactivation_and_inaccessible_selection (examples.ch42.test_capstone.CapstoneTests.test_A41_05_ready_revocation_deactivation_and_inaccessible_selection) ... ok\ntest_A41_06_07_exact_manager_and_member_expiry_matrix (examples.ch42.test_capstone.CapstoneTests.test_A41_06_07_exact_manager_and_member_expiry_matrix) ... ok\ntest_A41_08_exact_expiry_no_cleanup_required_for_denial (examples.ch42.test_capstone.CapstoneTests.test_A41_08_exact_expiry_no_cleanup_required_for_denial) ... ok\ntest_A41_09_two_workers_one_result_and_stable_receipt (examples.ch42.test_capstone.CapstoneTests.test_A41_09_two_workers_one_result_and_stable_receipt) ... ok\ntest_A41_10_cooperative_stop_rolls_back_prepared_ciphertext (examples.ch42.test_capstone.CapstoneTests.test_A41_10_cooperative_stop_rolls_back_prepared_ciphertext) ... ok\ntest_A41_10_deletion_failure_keeps_capacity_and_records_deadline_breach (examples.ch42.test_capstone.CapstoneTests.test_A41_10_deletion_failure_keeps_capacity_and_records_deadline_breach) ... ok\ntest_A41_10_ready_audit_failure_rolls_back_and_retry_creates_once (examples.ch42.test_capstone.CapstoneTests.test_A41_10_ready_audit_failure_rolls_back_and_retry_creates_once) ... ok\ntest_A41_11_deadline_during_preparation_discards_new_ciphertext (examples.ch42.test_capstone.CapstoneTests.test_A41_11_deadline_during_preparation_discards_new_ciphertext) ... ok\ntest_A41_11_expiry_first_stops_late_publication (examples.ch42.test_capstone.CapstoneTests.test_A41_11_expiry_first_stops_late_publication) ... ok\ntest_A41_11_publication_first_then_expiry_cannot_reopen (examples.ch42.test_capstone.CapstoneTests.test_A41_11_publication_first_then_expiry_cannot_reopen) ... ok\ntest_A41_12_message_shape_partition_and_terminal_replay (examples.ch42.test_capstone.CapstoneTests.test_A41_12_message_shape_partition_and_terminal_replay) ... ok\ntest_A41_13_exact_utf8_byte_boundary_and_one_over (examples.ch42.test_capstone.CapstoneTests.test_A41_13_exact_utf8_byte_boundary_and_one_over) ... ok\ntest_A41_13_selection_pending_and_retained_reservations (examples.ch42.test_capstone.CapstoneTests.test_A41_13_selection_pending_and_retained_reservations) ... ok\ntest_A41_14_accept_expire_delete_event_failures_are_not_success (examples.ch42.test_capstone.CapstoneTests.test_A41_14_accept_expire_delete_event_failures_are_not_success) ... ok\ntest_A41_14_collect_audit_and_cipher_integrity_failures_release_nothing (examples.ch42.test_capstone.CapstoneTests.test_A41_14_collect_audit_and_cipher_integrity_failures_release_nothing) ... ok\ntest_A41_15_purge_exact_retention_preserves_nonce_history_and_unique_ids (examples.ch42.test_capstone.CapstoneTests.test_A41_15_purge_exact_retention_preserves_nonce_history_and_unique_ids) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.115s\n\nOK\n"
+    },
+    "web42": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "examples.ch42.test_web"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 3,
+      "stdout": "",
+      "stderr": "test_A41_01_02_09_session_replay_content_and_cross_workspace (examples.ch42.test_web.WebTests.test_A41_01_02_09_session_replay_content_and_cross_workspace) ... ok\ntest_A41_07_08_expire_post_and_clock_boundary (examples.ch42.test_web.WebTests.test_A41_07_08_expire_post_and_clock_boundary) ... ok\ntest_A41_14_csrf_duplicate_json_methods_and_no_store (examples.ch42.test_web.WebTests.test_A41_14_csrf_duplicate_json_methods_and_no_store) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.098s\n\nOK\n"
+    },
+    "core20": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_contract"
+      ],
+      "cwd": "examples/ch20",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 10,
+      "stdout": "",
+      "stderr": "test_archive_is_manager_only_and_terminal (test_contract.ContractTests.test_archive_is_manager_only_and_terminal) ... ok\ntest_create_derives_owner_and_update_preserves_it (test_contract.ContractTests.test_create_derives_owner_and_update_preserves_it) ... ok\ntest_export_canonical_order_and_bounds (test_contract.ContractTests.test_export_canonical_order_and_bounds) ... ok\ntest_export_replay_conflict_and_key_scope (test_contract.ContractTests.test_export_replay_conflict_and_key_scope) ... ok\ntest_failure_before_receipt_completion_rolls_back_job_and_key (test_contract.ContractTests.test_failure_before_receipt_completion_rolls_back_job_and_key) ... ok\ntest_fields_and_types_are_strict (test_contract.ContractTests.test_fields_and_types_are_strict) ... ok\ntest_json_boundary (test_contract.ContractTests.test_json_boundary) ... ok\ntest_permission_matrix_and_current_membership (test_contract.ContractTests.test_permission_matrix_and_current_membership) ... ok\ntest_replay_rechecks_permission (test_contract.ContractTests.test_replay_rechecks_permission) ... ok\ntest_stale_repeat_and_invalid_transition_leave_full_state_unchanged (test_contract.ContractTests.test_stale_repeat_and_invalid_transition_leave_full_state_unchanged) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.029s\n\nOK\n"
+    },
+    "core23": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_authorization"
+      ],
+      "cwd": "examples/ch23",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 11,
+      "stdout": "",
+      "stderr": "test_bounds_and_unicode_export (test_authorization.AuthorizationTests.test_bounds_and_unicode_export) ... ok\ntest_cached_artifact_is_requester_bound (test_authorization.AuthorizationTests.test_cached_artifact_is_requester_bound) ... ok\ntest_committed_revocation_affects_next_request_and_cached_download (test_authorization.AuthorizationTests.test_committed_revocation_affects_next_request_and_cached_download) ... ok\ntest_cross_workspace_id_substitution_and_mixed_export_are_denied (test_authorization.AuthorizationTests.test_cross_workspace_id_substitution_and_mixed_export_are_denied) ... ok\ntest_empty_authorized_list_and_generic_denials (test_authorization.AuthorizationTests.test_empty_authorized_list_and_generic_denials) ... ok\ntest_failed_membership_write_rolls_back (test_authorization.AuthorizationTests.test_failed_membership_write_rolls_back) ... ok\ntest_inactive_account_is_denied_even_with_active_membership (test_authorization.AuthorizationTests.test_inactive_account_is_denied_even_with_active_membership) ... ok\ntest_manager_action_is_function_and_workspace_scoped (test_authorization.AuthorizationTests.test_manager_action_is_function_and_workspace_scoped) ... ok\ntest_owner_field_does_not_grant_cross_workspace_access (test_authorization.AuthorizationTests.test_owner_field_does_not_grant_cross_workspace_access) ... ok\ntest_same_matrix_across_list_detail_export_and_own_download (test_authorization.AuthorizationTests.test_same_matrix_across_list_detail_export_and_own_download) ... ok\ntest_summary_field_allowlist_preserves_private_detail_and_storage (test_authorization.AuthorizationTests.test_summary_field_allowlist_preserves_private_detail_and_storage) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.028s\n\nOK\n"
+    },
+    "core25": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "examples.ch25.test_attachments"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 9,
+      "stdout": "",
+      "stderr": "test_duplicate_display_names_retain_independent_bytes (examples.ch25.test_attachments.AttachmentTests.test_duplicate_display_names_retain_independent_bytes) ... ok\ntest_final_symlink_is_not_followed_and_permissions_are_private (examples.ch25.test_attachments.AttachmentTests.test_final_symlink_is_not_followed_and_permissions_are_private) ... ok\ntest_key_collision_does_not_overwrite_or_remove_existing_file (examples.ch25.test_attachments.AttachmentTests.test_key_collision_does_not_overwrite_or_remove_existing_file) ... ok\ntest_manifest_policy_and_resource_budgets (examples.ch25.test_attachments.AttachmentTests.test_manifest_policy_and_resource_budgets) ... ok\ntest_path_like_display_names_never_reach_storage (examples.ch25.test_attachments.AttachmentTests.test_path_like_display_names_never_reach_storage) ... ok\ntest_private_retrieval_and_unicode_name (examples.ch25.test_attachments.AttachmentTests.test_private_retrieval_and_unicode_name) ... ok\ntest_revocation_during_ingestion_prevents_publication (examples.ch25.test_attachments.AttachmentTests.test_revocation_during_ingestion_prevents_publication) ... ok\ntest_size_and_content_boundaries_leave_no_rejected_state (examples.ch25.test_attachments.AttachmentTests.test_size_and_content_boundaries_leave_no_rejected_state) ... ok\ntest_stream_failure_and_metadata_failure_cleanup (examples.ch25.test_attachments.AttachmentTests.test_stream_failure_and_metadata_failure_cleanup) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.040s\n\nOK\n"
+    },
+    "core26": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "examples.ch26.test_integrations"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 8,
+      "stdout": "",
+      "stderr": "test_authenticity_window_and_rotation (examples.ch26.test_integrations.IntegrationTests.test_authenticity_window_and_rotation) ... ok\ntest_business_key_prevents_same_report_under_new_event_id (examples.ch26.test_integrations.IntegrationTests.test_business_key_prevents_same_report_under_new_event_id) ... ok\ntest_event_collision_and_unknown_binding_leave_state_unchanged (examples.ch26.test_integrations.IntegrationTests.test_event_collision_and_unknown_binding_leave_state_unchanged) ... ok\ntest_receipt_failure_rolls_back_business_effect (examples.ch26.test_integrations.IntegrationTests.test_receipt_failure_rolls_back_business_effect) ... ok\ntest_redirect_and_oversize_close_and_preserve_state (examples.ch26.test_integrations.IntegrationTests.test_redirect_and_oversize_close_and_preserve_state) ... ok\ntest_schema_deadline_timeout_and_unknown_partner_do_not_write (examples.ch26.test_integrations.IntegrationTests.test_schema_deadline_timeout_and_unknown_partner_do_not_write) ... ok\ntest_stored_signed_fixture_and_duplicate_have_one_effect (examples.ch26.test_integrations.IntegrationTests.test_stored_signed_fixture_and_duplicate_have_one_effect) ... ok\ntest_valid_partner_and_permission_prevent_cross_workspace_call (examples.ch26.test_integrations.IntegrationTests.test_valid_partner_and_permission_prevent_cross_workspace_call) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.020s\n\nOK\n"
+    },
+    "core27": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "examples.ch27.test_crypto"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 8,
+      "stdout": "",
+      "stderr": "test_bad_tag_blocks_rotation_and_unknown_format_has_no_fallback (examples.ch27.test_crypto.CryptoTests.test_bad_tag_blocks_rotation_and_unknown_format_has_no_fallback) ... ok\ntest_cross_record_ciphertext_substitution_fails (examples.ch27.test_crypto.CryptoTests.test_cross_record_ciphertext_substitution_fails) ... ok\ntest_failed_rotation_preserves_old_ciphertext_and_nonce_ledger (examples.ch27.test_crypto.CryptoTests.test_failed_rotation_preserves_old_ciphertext_and_nonce_ledger) ... ok\ntest_reused_nonce_is_refused_before_new_ciphertext_is_committed (examples.ch27.test_crypto.CryptoTests.test_reused_nonce_is_refused_before_new_ciphertext_is_committed) ... ok\ntest_rotation_migrates_before_retiring_old_key (examples.ch27.test_crypto.CryptoTests.test_rotation_migrates_before_retiring_old_key) ... ok\ntest_round_trip_permissions_and_revocation (examples.ch27.test_crypto.CryptoTests.test_round_trip_permissions_and_revocation) ... ok\ntest_webhook_key_change_preserves_authentication_and_duplicate_policy (examples.ch27.test_crypto.CryptoTests.test_webhook_key_change_preserves_authentication_and_duplicate_policy) ... ok\ntest_wrong_key_nonce_ciphertext_and_context_fail_without_writes (examples.ch27.test_crypto.CryptoTests.test_wrong_key_nonce_ciphertext_and_context_fail_without_writes) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.026s\n\nOK\n"
+    },
+    "core28": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "examples.ch28.test_queue"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": 10,
+      "stdout": "",
+      "stderr": "test_admission_limits_scope_and_request_key_conflict (examples.ch28.test_queue.QueueTests.test_admission_limits_scope_and_request_key_conflict) ... ok\ntest_bounded_busy_retry_does_not_retry_other_failures (examples.ch28.test_queue.QueueTests.test_bounded_busy_retry_does_not_retry_other_failures) ... ok\ntest_cancelled_fixture_cleans_files_and_queue_accounting (examples.ch28.test_queue.QueueTests.test_cancelled_fixture_cleans_files_and_queue_accounting) ... ok\ntest_constraint_negative_control_same_schedule_allows_two_claims (examples.ch28.test_queue.QueueTests.test_constraint_negative_control_same_schedule_allows_two_claims) ... ok\ntest_exact_byte_limit_and_one_byte_over (examples.ch28.test_queue.QueueTests.test_exact_byte_limit_and_one_byte_over) ... ok\ntest_expired_queued_request_is_terminal_without_output (examples.ch28.test_queue.QueueTests.test_expired_queued_request_is_terminal_without_output) ... ok\ntest_failed_ready_write_rolls_back_claim_ciphertext_and_nonce_then_retry_succeeds (examples.ch28.test_queue.QueueTests.test_failed_ready_write_rolls_back_claim_ciphertext_and_nonce_then_retry_succeeds) ... ok\ntest_release_rechecks_membership_requester_and_expiry (examples.ch28.test_queue.QueueTests.test_release_rechecks_membership_requester_and_expiry) ... ok\ntest_revoked_while_queued_creates_no_artifact (examples.ch28.test_queue.QueueTests.test_revoked_while_queued_creates_no_artifact) ... ok\ntest_two_workers_one_committed_export_and_stable_redelivery (examples.ch28.test_queue.QueueTests.test_two_workers_one_committed_export_and_stable_redelivery) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.051s\n\nOK\n"
+    },
+    "appendix_values": {
+      "command": [
+        "python",
+        "-m",
+        "examples.appendices.values"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": null,
+      "stdout": "Allow\n",
+      "stderr": ""
+    },
+    "appendix_rules": {
+      "command": [
+        "python",
+        "-m",
+        "examples.appendices.rules"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": null,
+      "stdout": "Mina True\nRavi False\n",
+      "stderr": ""
+    },
+    "appendix_checks": {
+      "command": [
+        "python",
+        "-m",
+        "examples.appendices.checks"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": null,
+      "stdout": "",
+      "stderr": ""
+    },
+    "appendix_notebook_demo": {
+      "command": [
+        "python",
+        "-m",
+        "examples.appendices.notebook_demo"
+      ],
+      "cwd": ".",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "matched_expectation": true,
+      "test_methods": null,
+      "stdout": "before own retrieval: 200\nstored Mina active: 0\nafter detail: 404\nafter own artifact: 404\nRavi Beta: 200\nLee Beta: 404\nsource notes unchanged: True\n",
+      "stderr": ""
+    }
+  },
+  "sources_sha256": {
+    "examples/verify_book.py": "83714dc6ea74c1d8265b8257f18e6ba048d5dd66cbec2c43522f0c6b3f82de7e",
+    "examples/ch10/bad_types.py": "049a9daf2495eafe0b1f03d746f574588932cbaa644be39246f3298d415c14af",
+    "examples/ch10/checked_types.py": "00a5fb39ef993b6d912eef9a03bea13ce44b648bf4da580da9985d2e514f9e3f",
+    "examples/ch10/class_basics.py": "a593d1e240a0e4632c9511215591b73681cb1cad1d9399884a1904d57208f32e",
+    "examples/ch10/draft_input.py": "7ff79d691d026c68074e4a43e41a6668f7c8f6a840bd9f467342ffc8407dee48",
+    "examples/ch10/note_models.py": "e7754cf2913f1968b07e6abeccdf85eeb40e89418391d4b1a892ab86a4285984",
+    "examples/ch10/publish_draft.py": "216c4f2b8bd074df57f459a01058ff010ea5c15d638f3a7ef38ae7cf2632312a",
+    "examples/ch10/read_drafts.py": "8907d0965f92f30fc3f83887e429ed12bd8a94b64038cc2baa96dcea2e7656fd",
+    "examples/ch10/review_queue.py": "764a79b21bcd4c1d02061a46c54ca1b925fada135efa4d149837db10727d71a7",
+    "examples/ch10/unchecked_input.py": "0b234a14c9e56adee82f3caab5c01005fbcdb35a2a9f34e8dc8a8aa259576631",
+    "examples/ch12/access_rules.py": "f180fce30fa467e96e94535563e2a9b259f89b8597aafb3dc32e8adaf288dac9",
+    "examples/ch12/expiry.py": "65098f7756bd3eac1d125ed098fb9aed3380b924763e6cb8e52f6be11a3e1866",
+    "examples/ch12/note_streams.py": "27664c60d6774d131c84d313ac2c1dd8b43cced326fd578917f61be5cdb89eb7",
+    "examples/ch12/preview_counts.py": "150e5329d62b54bdaf78fe61d9b48af56a17e7b272223ebc58a962cb71049490",
+    "examples/ch12/quota_rules.py": "bbf0ccdfc1994a5726130cd16fb09d62d2889fa852ac3e9710a0981b0f5b243b",
+    "examples/ch12/tests/conftest.py": "e3e2b047de4e49a82928c644a368629d1f7083f02de562521889387c44153140",
+    "examples/ch12/tests/test_access_rules.py": "4940d1ff25362c129227501063e6aea2662cce6e0f0e55e847cc1a86dd1b581a",
+    "examples/ch12/tests/test_expiry.py": "0729f470c8101fca0339634656ca6611ac3cfadc6f87622d11a775038b0479f7",
+    "examples/ch12/tests/test_preview_counts.py": "a7b3cab87dfe712fa213d5fbdcaa8f1085327d2ec7c4c9470327c35df10b6556",
+    "examples/ch12/tests/test_quota_boundary.py": "22209ef7d55fec7f251d45fb7ba8e2e6856302f5ba1814ec708c9df73a0b733c",
+    "examples/ch12/tests/test_quota_cases.py": "fda032a020f7e84ebf37a3fd8aad1c2f1258ac6fe3a8ff97d6df76a62a7c228c",
+    "examples/ch12/tests/test_timing.py": "5c39caa5ab30c25e38acdc85853823fa0f630736b44ed0114ba8c55a69d8e6ac",
+    "examples/ch12/timing.py": "8b9b615f4ca20fa264f8be12f90b5be944de9af7edd63097df0341699edd9cd3",
+    "examples/ch19/casebook/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "examples/ch19/casebook/settings.py": "5cc5a184309d08b2093efe6d2222af876dfffa83b01de14ae10cddb0bff11632",
+    "examples/ch19/casebook/urls.py": "365ae045fe81d47703ec27f515ec0c58a5a402e69af0dd404c85e04d9e68f84a",
+    "examples/ch19/manage.py": "0342a38cfa59cd21d94ba91ae96335f288d80de6671276ec0bc7f68125c93be9",
+    "examples/ch19/notes/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "examples/ch19/notes/migrations/0001_initial.py": "ce14bae1c599e26d13a793c1a20eaf1da0529c60b2448c45acde5303b22e2715",
+    "examples/ch19/notes/migrations/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "examples/ch19/notes/models.py": "93bd4d76eca568d7b29f999828d8bd28607d32856c507c75cca3f87b906966fc",
+    "examples/ch19/notes/tests.py": "03a29d460759db414fdc09b2cbdd6acabba2d475b20dc1f415f84faca8d2e6ce",
+    "examples/ch19/notes/views.py": "12d86a9cd7f2d672f4b494ba7369647f3b05636d940052f563847541cc05aaa4",
+    "examples/ch19/orm_demo.py": "340cf127d29dd277c072c95bb05ba33ee173da5d655041cad831d7717861a4cb",
+    "examples/ch20/contract_demo.py": "21189244d78a3b961c6f2a6ef27e6f2735216c04c90d66fd0eb566a335f78450",
+    "examples/ch20/contract_store.py": "645556add4f89632f878ec99601ca4c8380db6614253c89cdc927ab7b53a4af2",
+    "examples/ch20/test_contract.py": "76e8595159577b257dce42a95ec090f38abf55b8039b8454ec614fc1ca43ebaf",
+    "examples/ch21/django_passwords.py": "01187a1e07d75f4c93beda081cdc71ab032c2541e139eac05739e7e211859d32",
+    "examples/ch21/recovery_demo.py": "4aa21f37f5e03e6bd63f3a3700478127b2c621d37668cc09ad7b115f0a3f38f0",
+    "examples/ch21/recovery_lab.py": "bcedbe5971b9ccf61da36dd7b5b6ce9985b63844659cb49918c7edc58c4aa6c7",
+    "examples/ch21/test_recovery.py": "b0d96bb4ef1903f2f6c978e5df6c3fe968b3d805a7bd51033fe1d89bc742b678",
+    "examples/ch22/claims_policy.py": "2d6a09a80f017feaf1c130f8f07e9f51ca62fe56db84058269b1342f822c84d6",
+    "examples/ch22/django_sessions.py": "d51db0a4c981d34a54700d720e661175aece7da8a4df061348d496e8630af2dd",
+    "examples/ch22/jwt_verifier.py": "38fd13f031e927cbd2bd037ffeebe207ca93508c646d1cd2a7761ca06f2db519",
+    "examples/ch22/test_claims.py": "e28448cc608943c5fa3128ef979337bb6499f4ee5b31a1bf16c26d9c910d7d82",
+    "examples/ch22/test_jwt.py": "9731d55cb2e9698b47dc95d1c8026f80a823132199ef9e930ae91dab4378b73a",
+    "examples/ch23/authorization_demo.py": "e2b768200cca3f30f786a1e8039e028a4b160d5c5994a78ce6c1475a7693c999",
+    "examples/ch23/authorization_service.py": "b5d5f071f1892256b6425a2bd29c91efadeedaafa9b3ac306b2e24695b3eea7c",
+    "examples/ch23/test_authorization.py": "bef1bd51ff0406f7a2bb9dce0146e132e04d67ac094d2ec6eee2e53ec138f8ab",
+    "examples/ch24/browser_lab.py": "7ba3a410941f1cbf9e92961924d4529315ffb8327b7122da4abe7df45d3b4a41",
+    "examples/ch24/html_evidence.py": "ba6e780deb0c5c0118dd51f4d98ab36c0307a953a1bac00a9dd809143283bf0d",
+    "examples/ch24/test_browser.py": "bde5a483dc38d9feb1f962a7846bbf3744c5bb6e522e185e0d62f9ee9c6e0afc",
+    "examples/ch25/archive_policy.py": "a3f4416569ea428f34287c87657e5cdd12fa8a3879f44f02f5119a81bb093941",
+    "examples/ch25/attachment_demo.py": "ce25eea8e1b8c17f186de943408de8be9d2183cc76fce952544fb97e1d9727dc",
+    "examples/ch25/attachments.py": "c980bffb73a31f106eb80e5c5350a36e534c3475a7ed7472231a03e71186edd7",
+    "examples/ch25/test_attachments.py": "74b2acba689d2945e41cca19c499be4827852258dc2c4e550c743f1d33cb81fc",
+    "examples/ch26/fake_partner.py": "8bfac1c00db07085e437d7ff3e6a8c2747a55fcaa6623aa88951b795a438b1fc",
+    "examples/ch26/integration_demo.py": "8b3ddaae4282f770edc4fd8ec79391c7f341ba4dd45ca2de49462ce7d6495934",
+    "examples/ch26/integrations.py": "e0fedd7669f166871b55cd92cc2580f6d67e40863593689cf2b88cfa1ee63d17",
+    "examples/ch26/test_integrations.py": "0f54a5b1f03ee1e5e12015afb046bd3aa2e81f58f1962ebde0c7b23bc585a7d2",
+    "examples/ch27/crypto_demo.py": "e73da3ed1b67035da5478f3a6a1e579e54c4b45510d1ec0127c9f43d66d20f9f",
+    "examples/ch27/export_crypto.py": "1a73f17e8634120180f4228ba570528fb671879ca00ac766b25719bf16ad8eb8",
+    "examples/ch27/random_demo.py": "0999d3fc93614dfb534aa839c4698bd50a4345f0fc95cf790a6e47d797f0e319",
+    "examples/ch27/test_crypto.py": "eb7f56452a3e9fb0e9b2c9ebbfbcb09845105f391ae692f86cb8e14fbba4645c",
+    "examples/ch28/cancellation.py": "d19d2c7ceabd6737d5fd2fc530ec02fe14c9b7aa52c5ed19b5bc14f3aece001b",
+    "examples/ch28/export_queue.py": "523f9a459e93170ddfcbe71cdde0719bbf82d0a58ca93ac46c7e1b2d9d857516",
+    "examples/ch28/queue_demo.py": "f6aef51cba55b60220bc5c9c3d0b1ec5fc07f4110cb78f1bc61770454704adad",
+    "examples/ch28/test_queue.py": "a619c607b85c1b3c68fba37be14d5a2dbd0bafcc090891417f4e3c11975c40f0",
+    "examples/ch28/two_workers.py": "66c914b530c0968f5a59f0693a3a5dac94a5f454cb8af4e1aa2ca1b557e8ab76",
+    "examples/ch30/fixtures.py": "3a698dc60a0871ab195cca2ed677f92f92c4cc2164c96a0d8c7d39ae4c847693",
+    "examples/ch30/response_policy.py": "49cd9d250ce377e44faabb998dca210223ea0bd19d4280232091dcb852ff3708",
+    "examples/ch30/shrink_demo.py": "dc3cb47be820c5529092cb3cb88fe0698d43e3066f19529ae2a92881c9b3479e",
+    "examples/ch30/strategies.py": "1b899ee2bb07847056a670ef765aa38c6064891a5b31d80fdd5805fc2992386a",
+    "examples/ch30/test_http.py": "7c4b129cd4e9c3b3397478b914dd54e48ec73744c322323c06c6776e942b9285",
+    "examples/ch30/test_local.py": "4ebbf08e0813821f01013867cdd9ac1294297ae3ad2c1b4a4cf33b315bc6b0d0",
+    "examples/ch30/verification_lab.py": "3c4d71d4fcab5f2d07eaa160832e11396f0b46c3c7aed5efb1d367989bb218f8",
+    "examples/ch42/capstone.py": "3780eff1186540f7699cb7d8aba7e4dfe6edd966714851bf226077d8c3571438",
+    "examples/ch42/demo.py": "53332617e6656a0d8ce82152df078b00e33d3153e37aa9e8bfbfde09ffc37cff",
+    "examples/ch42/fixtures.py": "453ed1bd44a9778d8219326f829fbff40afc797510b135d92e31a1636c077837",
+    "examples/ch42/test_capstone.py": "e94b3e12777bbd11671f7633d91ec85bacebad6b3d2d38ab7b44cc850a56d1b8",
+    "examples/ch42/test_web.py": "f0667026d06b9e9aab51d773b7cfd524eb9240e3b892899a055917637d4c08ca",
+    "examples/ch42/web.py": "bcda44e7fc0536f5fa2a7eea120f74ae1b65de4f5313e584d7c7c78db59ee8a4",
+    "examples/ch42/workers.py": "46965a94a276c43884806ee5228a355896d5d06acbfcc2360f5b760824003045"
+  },
+  "limits": [
+    "macOS local fixtures and loopback HTTP only",
+    "no Windows installer execution",
+    "no browser-engine CSP/CORS/cookie enforcement",
+    "no hosted provider, key custody or production approval"
+  ]
+}

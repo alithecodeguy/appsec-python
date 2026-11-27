@@ -1,0 +1,48 @@
+{
+  "kind": "actual local execution of synthetic incident/recovery fixtures",
+  "collected_at_utc": "2026-11-27T00:06:11.014271+00:00",
+  "source_commit": "2c79fe0806a5a788e79afbd0adbc1c4a495a9a5d",
+  "artifact_sha256": "ed326bc772909f0dbe064d454488190927593bf18671e6a3c67ac7f017523a5f",
+  "runtime": {
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "cryptography": "50.0.2"
+  },
+  "tests": {
+    "run": 9,
+    "passed": 9,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "transcript": "test_backup_restore_is_quarantined_and_history_reconciled (examples.ch44.test_recovery.RecoveryTests.test_backup_restore_is_quarantined_and_history_reconciled) ... ok\ntest_detector_does_not_trust_stale_breach_flag (examples.ch44.test_recovery.RecoveryTests.test_detector_does_not_trust_stale_breach_flag) ... ok\ntest_duplicate_replay_and_local_copy_inventory (examples.ch44.test_recovery.RecoveryTests.test_duplicate_replay_and_local_copy_inventory) ... ok\ntest_failed_removal_keeps_copy_capacity_and_breach_survives_success (examples.ch44.test_recovery.RecoveryTests.test_failed_removal_keeps_copy_capacity_and_breach_survives_success) ... ok\ntest_held_subject_is_not_promoted_by_recovery (examples.ch44.test_recovery.RecoveryTests.test_held_subject_is_not_promoted_by_recovery) ... ok\ntest_metadata_retention_is_not_reset_by_restore_or_retry (examples.ch44.test_recovery.RecoveryTests.test_metadata_retention_is_not_reset_by_restore_or_retry) ... ok\ntest_recovery_checks_positive_tenant_path_and_negative_paths (examples.ch44.test_recovery.RecoveryTests.test_recovery_checks_positive_tenant_path_and_negative_paths) ... ok\ntest_shorter_retention_proposal_requires_earlier_detection (examples.ch44.test_recovery.RecoveryTests.test_shorter_retention_proposal_requires_earlier_detection) ... ok\ntest_timeline_distinguishes_effective_expiry_and_later_event (examples.ch44.test_recovery.RecoveryTests.test_timeline_distinguishes_effective_expiry_and_later_event) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.146s\n\nOK\n"
+  },
+  "listing_matches": true,
+  "cli_output_matches": true,
+  "timeline_epoch_utc_checked": true,
+  "sources_evidence_sha256": {
+    "examples/ch43/evidence/candidate.json": "286a382024320f1f46e2e226daad17227e946a1593f29dbf41a6623950dc628b",
+    "examples/ch43/release-decision.json": "73dcf49f74a70d854efc031b202e662ef5f5bb36d8a07a07c8b816668bf6dcd0",
+    "examples/ch44/README.md": "04b08438fb361bb6dc8770108d2390b29db7748abcccd4ce47103b648f3d1a21",
+    "examples/ch44/evidence/audit-input.jsonl": "2ac1a7e8f2415bb6c9cfeb5213adcb2e9f8ed03a833cfa700dc7e4b5a713a693",
+    "examples/ch44/evidence/incident-evidence.json": "cb5111cbbe882d1a45d9d37607f7dffb9ea47552650b3d7d3a2c603fcd3accae",
+    "examples/ch44/evidence/timeline.txt": "254eabdbf167c84b69eddb6aa3f3c7711382c6cf35af788d0a3b8a88387d0e67",
+    "examples/ch44/handover.md": "46e2bf845bfa6988b47a648e0932e946ee92702a68b5b131785d2653589aeeb6",
+    "examples/ch44/incident-note.md": "f9328aff05f5059cc51e39d37bbf0d6546ad629461bf66753533bc4105320fb9",
+    "examples/ch44/rehearsal.py": "2c1d1e4a7fbb0337f01e83cd1ed6f32e38e0312d9bbe441cb71bd2fa862122f8",
+    "examples/ch44/requirements.txt": "8b5c18678b29b5e8e0fb586a35ac1dce3ccd9da321e8f12ace0e118350b4e568",
+    "examples/ch44/test_recovery.py": "3fe6f1e01c6c205bf6ee5a813c5aa32da179f2ac0366c15b41719456fc82dfa5",
+    "examples/ch44/timeline.py": "682c06c11b07813c42861ce9436922dfe80e1c24b9a2a92c1d7c96620cdf97b7",
+    "manuscript/chapters/44.md": "be69c87197905c33467b2f11cda2f9fb979b395537ec09535b39ebe5790a1d6e"
+  },
+  "production_decision": "HOLD",
+  "production_resume": false,
+  "retention_change": "proposal only; original candidate unchanged",
+  "limits": [
+    "no production incident/deployment",
+    "no provider/key-loss recovery",
+    "recovery harness uses domain probes; local HTTP is separately tested in 42/43",
+    "no fleet-wide containment",
+    "no physical erasure or provider copy proof",
+    "no five-minute policy implementation"
+  ]
+}

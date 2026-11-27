@@ -1,0 +1,139 @@
+{
+  "record_kind": "worked local release review; no deployment or authenticated approval",
+  "source_commit": "2c79fe0806a5a788e79afbd0adbc1c4a495a9a5d",
+  "artifact_sha256": "ed326bc772909f0dbe064d454488190927593bf18671e6a3c67ac7f017523a5f",
+  "candidate_id": "CB-EXPORT-RC43-01",
+  "design_revision": "CB-EXPORT-41-r1",
+  "promotion_scope": "production private-export service",
+  "decision": "HOLD",
+  "deployment_artifact": null,
+  "configuration_digest": null,
+  "approved_exception": null,
+  "controls": [
+    {
+      "id": "EXP-01",
+      "proposed_owner": "Sam",
+      "result": "partial",
+      "basis": "A41-01/02/03 core and local session HTTP cases passed; production identity/domain provisioning unverified",
+      "actual_evidence": "evidence/candidate-run.json and source locations in manual-review.json"
+    },
+    {
+      "id": "EXP-02",
+      "proposed_owner": "Sam",
+      "result": "local_pass",
+      "basis": "A41-01/03/13 exact fields, normalization and boundary checks passed",
+      "actual_evidence": "evidence/candidate-run.json and source locations in manual-review.json"
+    },
+    {
+      "id": "EXP-03",
+      "proposed_owner": "Sam / Owen",
+      "result": "partial",
+      "basis": "A41-04/12 current worker and partition checks passed; delivery/workload authentication missing",
+      "actual_evidence": "evidence/candidate-run.json and source locations in manual-review.json"
+    },
+    {
+      "id": "EXP-04",
+      "proposed_owner": "Sam",
+      "result": "partial",
+      "basis": "A41-05/06/08 and local HTTP collection checks passed; deployed alternate paths remain unverified",
+      "actual_evidence": "evidence/candidate-run.json and source locations in manual-review.json"
+    },
+    {
+      "id": "EXP-05",
+      "proposed_owner": "Sam",
+      "result": "local_pass",
+      "basis": "A41-06/07/11 and local HTTP/CSRF expiry checks passed; deployed controls remain separate",
+      "actual_evidence": "evidence/candidate-run.json and source locations in manual-review.json"
+    },
+    {
+      "id": "EXP-06",
+      "proposed_owner": "Owen / Nora",
+      "result": "partial",
+      "basis": "A41-08/10/15 local clocks, row deletion and purge passed; automatic cleanup/managed-copy/restore evidence missing",
+      "actual_evidence": "evidence/candidate-run.json and source locations in manual-review.json"
+    },
+    {
+      "id": "EXP-07",
+      "proposed_owner": "Owen",
+      "result": "blocked",
+      "basis": "A41-14 AEAD checks passed locally; REV43-01/02 fixture custody is not production custody",
+      "actual_evidence": "evidence/candidate-run.json and source locations in manual-review.json"
+    },
+    {
+      "id": "EXP-08",
+      "proposed_owner": "Sam",
+      "result": "local_pass",
+      "basis": "A41-03/09 unique intent/result and unchanged replay passed for SQLite source candidate",
+      "actual_evidence": "evidence/candidate-run.json and source locations in manual-review.json"
+    },
+    {
+      "id": "EXP-09",
+      "proposed_owner": "Sam / Owen",
+      "result": "local_pass",
+      "basis": "A41-10/11 local cancellation, faults and publication ordering passed; no external store/crash guarantee",
+      "actual_evidence": "evidence/candidate-run.json and source locations in manual-review.json"
+    },
+    {
+      "id": "EXP-10",
+      "proposed_owner": "Sam",
+      "result": "local_pass",
+      "basis": "A41-14 required local audit fault tests passed; no remote audit system is selected",
+      "actual_evidence": "evidence/candidate-run.json and source locations in manual-review.json"
+    },
+    {
+      "id": "EXP-11",
+      "proposed_owner": "Sam / Owen",
+      "result": "partial",
+      "basis": "A41-13 local counters and coordinator passed; deployed capacity configuration unverified",
+      "actual_evidence": "evidence/candidate-run.json and source locations in manual-review.json"
+    },
+    {
+      "id": "EXP-12",
+      "proposed_owner": "Sam / Owen",
+      "result": "partial",
+      "basis": "All three local Django HTTP methods passed with no skips; production authentication/TLS/proxy configuration unverified",
+      "actual_evidence": "evidence/candidate-run.json and source locations in manual-review.json"
+    }
+  ],
+  "gates": {
+    "source_artifact_binding": "local_pass",
+    "core_checks": "20 passed",
+    "web_checks": "3 passed, zero skipped; local Django test client",
+    "baseline_runtime": "local_pass: CPython 3.12.14, Django 6.1.3",
+    "dependency_advisory_report": "missing",
+    "final_runtime_lock_sbom": "missing",
+    "automated_static_report": "missing; actual manual source review available",
+    "production_configuration": "blocked by fixture settings and missing actual config",
+    "managed_copy_restore": "missing",
+    "rollback_rehearsal": "missing"
+  },
+  "minimum_next_actions": [
+    {
+      "owner": "Sam",
+      "action": "Integrate reviewed production identity/domain provisioning and verify all deployed private release routes and hosting controls."
+    },
+    {
+      "owner": "Owen",
+      "action": "Replace fixture custody, prove restart/recovery with retained ciphertext, and bind actual hosting configuration."
+    },
+    {
+      "owner": "Owen / Tess",
+      "action": "Produce final deployment artifact inventory/lock/advisory review and investigate actual findings."
+    },
+    {
+      "owner": "Owen / Dana",
+      "action": "Exercise scheduled expiry/deletion, all managed copies, backup exclusion and restored revocation/expiry."
+    },
+    {
+      "owner": "Owen / Sam",
+      "action": "Rehearse rollback without reviving access or losing nonce/closure/deletion history."
+    }
+  ],
+  "evidence_sha256": {
+    "evidence/candidate.json": "286a382024320f1f46e2e226daad17227e946a1593f29dbf41a6623950dc628b",
+    "evidence/candidate-run.json": "68ed4cefa860664545ba707f4ea4db0ba7bc98d67af6116d967c9369116026f0",
+    "manual-review.json": "9f5d7ec5f6275820cb050ff5aeb22ba0d23a4cba2a0ed19c974f5029213983a8",
+    "example-findings.json": "bfb87546c1f2e33f05dbd8f45cab65b13e0d984668c54717c411e891ea74db35"
+  },
+  "owners_note": "Roles proposed from chapter 40's fictional roster; no real owner acceptance or approval asserted."
+}

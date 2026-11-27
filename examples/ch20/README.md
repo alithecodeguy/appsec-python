@@ -3,7 +3,7 @@
 This local, standard-library model specifies proposed API behavior. It does not
 add HTTP routes to chapter 19 and does not authenticate fixture users.
 It requires Python 3.12 or later for explicit SQLite `autocommit` configuration;
-the book targets CPython 3.15.2.
+the book targets CPython 3.12.14.
 
 From this directory, use your learning environment's Python:
 

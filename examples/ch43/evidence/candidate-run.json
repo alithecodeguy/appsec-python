@@ -1,0 +1,97 @@
+{
+  "evidence_kind": "actual local execution of extracted candidate source",
+  "source_commit": "2c79fe0806a5a788e79afbd0adbc1c4a495a9a5d",
+  "artifact": "candidate-source.zip",
+  "artifact_sha256": "ed326bc772909f0dbe064d454488190927593bf18671e6a3c67ac7f017523a5f",
+  "kind": "allowlisted source ZIP; runtime dependencies are NOT bundled",
+  "collected_at_utc": "2026-11-26T23:59:01.163096+00:00",
+  "tests": {
+    "test_capstone": {
+      "run": 20,
+      "passed": 20,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "successful": true,
+      "transcript": "test_A41_01_two_workspace_payloads_and_minimal_status (examples.ch42.test_capstone.CapstoneTests.test_A41_01_two_workspace_payloads_and_minimal_status) ... ok\ntest_A41_02_anonymous_cross_workspace_and_route_substitution (examples.ch42.test_capstone.CapstoneTests.test_A41_02_anonymous_cross_workspace_and_route_substitution) ... ok\ntest_A41_03_validation_normalization_replay_and_conflict (examples.ch42.test_capstone.CapstoneTests.test_A41_03_validation_normalization_replay_and_conflict) ... ok\ntest_A41_04_revoked_while_queued_then_restored_cannot_reopen (examples.ch42.test_capstone.CapstoneTests.test_A41_04_revoked_while_queued_then_restored_cannot_reopen) ... ok\ntest_A41_05_ready_revocation_deactivation_and_inaccessible_selection (examples.ch42.test_capstone.CapstoneTests.test_A41_05_ready_revocation_deactivation_and_inaccessible_selection) ... ok\ntest_A41_06_07_exact_manager_and_member_expiry_matrix (examples.ch42.test_capstone.CapstoneTests.test_A41_06_07_exact_manager_and_member_expiry_matrix) ... ok\ntest_A41_08_exact_expiry_no_cleanup_required_for_denial (examples.ch42.test_capstone.CapstoneTests.test_A41_08_exact_expiry_no_cleanup_required_for_denial) ... ok\ntest_A41_09_two_workers_one_result_and_stable_receipt (examples.ch42.test_capstone.CapstoneTests.test_A41_09_two_workers_one_result_and_stable_receipt) ... ok\ntest_A41_10_cooperative_stop_rolls_back_prepared_ciphertext (examples.ch42.test_capstone.CapstoneTests.test_A41_10_cooperative_stop_rolls_back_prepared_ciphertext) ... ok\ntest_A41_10_deletion_failure_keeps_capacity_and_records_deadline_breach (examples.ch42.test_capstone.CapstoneTests.test_A41_10_deletion_failure_keeps_capacity_and_records_deadline_breach) ... ok\ntest_A41_10_ready_audit_failure_rolls_back_and_retry_creates_once (examples.ch42.test_capstone.CapstoneTests.test_A41_10_ready_audit_failure_rolls_back_and_retry_creates_once) ... ok\ntest_A41_11_deadline_during_preparation_discards_new_ciphertext (examples.ch42.test_capstone.CapstoneTests.test_A41_11_deadline_during_preparation_discards_new_ciphertext) ... ok\ntest_A41_11_expiry_first_stops_late_publication (examples.ch42.test_capstone.CapstoneTests.test_A41_11_expiry_first_stops_late_publication) ... ok\ntest_A41_11_publication_first_then_expiry_cannot_reopen (examples.ch42.test_capstone.CapstoneTests.test_A41_11_publication_first_then_expiry_cannot_reopen) ... ok\ntest_A41_12_message_shape_partition_and_terminal_replay (examples.ch42.test_capstone.CapstoneTests.test_A41_12_message_shape_partition_and_terminal_replay) ... ok\ntest_A41_13_exact_utf8_byte_boundary_and_one_over (examples.ch42.test_capstone.CapstoneTests.test_A41_13_exact_utf8_byte_boundary_and_one_over) ... ok\ntest_A41_13_selection_pending_and_retained_reservations (examples.ch42.test_capstone.CapstoneTests.test_A41_13_selection_pending_and_retained_reservations) ... ok\ntest_A41_14_accept_expire_delete_event_failures_are_not_success (examples.ch42.test_capstone.CapstoneTests.test_A41_14_accept_expire_delete_event_failures_are_not_success) ... ok\ntest_A41_14_collect_audit_and_cipher_integrity_failures_release_nothing (examples.ch42.test_capstone.CapstoneTests.test_A41_14_collect_audit_and_cipher_integrity_failures_release_nothing) ... ok\ntest_A41_15_purge_exact_retention_preserves_nonce_history_and_unique_ids (examples.ch42.test_capstone.CapstoneTests.test_A41_15_purge_exact_retention_preserves_nonce_history_and_unique_ids) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.099s\n\nOK\n"
+    },
+    "test_web": {
+      "run": 3,
+      "passed": 3,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "successful": true,
+      "transcript": "test_A41_01_02_09_session_replay_content_and_cross_workspace (examples.ch42.test_web.WebTests.test_A41_01_02_09_session_replay_content_and_cross_workspace) ... ok\ntest_A41_07_08_expire_post_and_clock_boundary (examples.ch42.test_web.WebTests.test_A41_07_08_expire_post_and_clock_boundary) ... ok\ntest_A41_14_csrf_duplicate_json_methods_and_no_store (examples.ch42.test_web.WebTests.test_A41_14_csrf_duplicate_json_methods_and_no_store) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.077s\n\nOK\n"
+    }
+  },
+  "candidate_module_origins": {
+    "examples.ch23.authorization_service": "examples/ch23/authorization_service.py",
+    "examples.ch27.export_crypto": "examples/ch27/export_crypto.py",
+    "examples.ch28.export_queue": "examples/ch28/export_queue.py",
+    "examples.ch28.cancellation": "examples/ch28/cancellation.py",
+    "examples.ch42.capstone": "examples/ch42/capstone.py",
+    "examples.ch42.fixtures": "examples/ch42/fixtures.py",
+    "examples.ch42.workers": "examples/ch42/workers.py"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "implementation": "CPython",
+    "sqlite": "3.53.1",
+    "cryptography_openssl": "OpenSSL 4.0.3 29 Sep 2026"
+  },
+  "runtime_packages": {
+    "cryptography": {
+      "installed": true,
+      "version": "50.0.2",
+      "requires": [
+        "cffi>=2.0.0 ; platform_python_implementation != 'PyPy'",
+        "typing-extensions>=4.13.2 ; python_full_version < '3.11'",
+        "bcrypt>=3.1.5 ; extra == 'ssh'"
+      ],
+      "metadata_sha256": "047cfc71226409de4318b360aef15c63a2adf609731e3dcf7fe932f14ea042ee",
+      "import_origin": "/private/tmp/casebook-tested-baseline/lib/python3.12/site-packages/cryptography/__init__.py",
+      "import_file_sha256": "9ad86e52b4dde0544e0a9518ad322a863cfab3a4fd763019ad5ee7675a0c9b6a"
+    },
+    "cffi": {
+      "installed": true,
+      "version": "2.1.1",
+      "requires": [
+        "pycparser; implementation_name != \"PyPy\""
+      ],
+      "metadata_sha256": "558bafb9093a8e790175d9ecff9688382981d744877dad86fd6770db0f4dc918"
+    },
+    "pycparser": {
+      "installed": true,
+      "version": "3.12",
+      "requires": [],
+      "metadata_sha256": "ad8db5fe2b0e0a3b0e8419fe5041b80be92470a40b06bd9c1462a0a8bb637c92"
+    },
+    "Django": {
+      "installed": true,
+      "version": "6.1.3",
+      "requires": [
+        "asgiref>=3.9.1",
+        "sqlparse>=0.5.0",
+        "tzdata; sys_platform == \"win32\"",
+        "argon2-cffi>=23.1.0; extra == \"argon2\"",
+        "bcrypt>=4.1.1; extra == \"bcrypt\""
+      ],
+      "metadata_sha256": "405e9e9a6bb5578194a27d5d9a31ba9cf2c0a81b8343686b33f3f92e824561d6"
+    }
+  },
+  "tool_availability": {
+    "bandit": false,
+    "pip_audit": false,
+    "django": true
+  },
+  "demonstrations": {
+    "admission": "[admission]\nsame receipt: True\nrequest rows and reserved slots: 1 1\nRavi requests Alpha: denied\nretry/refusal leave stored state unchanged: True\n",
+    "worker": "[worker]\nboth workers observed no result: True\nworker outcomes: ['created', 'duplicate']\nAlpha/Beta result rows: 2\ncollected workspace and note: 1 101\ncollected workspace and note: 2 202\nduplicate delivery: duplicate\nduplicate state unchanged: True\nMina after revocation: denied\nrefusal leaves stored export state unchanged: True\n",
+    "lifecycle": "[lifecycle]\nat exact expiry: 410 export_unavailable\nexpiry gate needs no cleanup write: True\nfailed cleanup: retry\nstate, reserved, payloads, breach: expired 1 1 1\ncleanup retry: deleted\nreserved, payloads, nonce history: 0 0 1\npurged at retention boundary: True\njob ID never reused: True\n"
+  },
+  "dependency_scope": "selected observed local runtime distributions; not a complete SBOM, lock or advisory scan",
+  "working_tree_used": false,
+  "baseline_python": "3.12.14",
+  "baseline_python_tested": true
+}

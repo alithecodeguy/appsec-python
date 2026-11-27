@@ -12,4 +12,4 @@ SQLite databases, a fake HTTP transport, stored raw JSON/header fixtures and
 public dummy HMAC keys. The fixture timestamp is fixed, not the current clock.
 No live network, real webhook provider or queue is contacted. The custom fixture
 signature envelope is not a provider SDK/protocol. The edition targets Python
-3.15.2; the chapter records actual checks and network-enforcement gaps.
+3.12.14; the chapter records actual checks and network-enforcement gaps.

@@ -1,0 +1,33 @@
+{
+  "evidence_kind": "EXAMPLE ONLY: fictional scanner and advisory records, not executed tools",
+  "source_commit": "2c79fe0806a5a788e79afbd0adbc1c4a495a9a5d",
+  "artifact_sha256": "ed326bc772909f0dbe064d454488190927593bf18671e6a3c67ac7f017523a5f",
+  "records": [
+    {
+      "id": "EX43-SAST-01",
+      "tool": "fictional generic SQL detector",
+      "location": "examples/ch42/capstone.py:287",
+      "claim": "Interpolated SQL may contain an untrusted table name",
+      "disposition": "closed for this path by REV43-04 actual manual review",
+      "not_real_scanner_output": true
+    },
+    {
+      "id": "FICTIONAL-CH43-001",
+      "component": "cryptography",
+      "fictional_affected_range": ">=50.0.0,<50.0.2",
+      "fictional_fixed_version": "50.0.2",
+      "not_real_advisory": true,
+      "actual_observed_runtime_version": "50.0.2",
+      "local_example_predicate": "not matched",
+      "deployment_disposition": "unknown: no final deployment image was built or inventoried"
+    },
+    {
+      "id": "EX43-IMAGE-01",
+      "subject": "EXAMPLE-IMAGE-NOT-BUILT",
+      "installed_cryptography": "50.0.2",
+      "result": "If authenticated actual final-image evidence established this, the fictional range predicate would not match.",
+      "not_actual_inventory": true,
+      "cannot_satisfy_actual_gate": true
+    }
+  ]
+}

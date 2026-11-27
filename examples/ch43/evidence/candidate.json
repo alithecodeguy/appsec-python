@@ -1,0 +1,23 @@
+{
+  "source_commit": "2c79fe0806a5a788e79afbd0adbc1c4a495a9a5d",
+  "artifact": "candidate-source.zip",
+  "artifact_sha256": "ed326bc772909f0dbe064d454488190927593bf18671e6a3c67ac7f017523a5f",
+  "kind": "allowlisted source ZIP; runtime dependencies are NOT bundled",
+  "files_sha256": {
+    "examples/ch23/authorization_service.py": "b5d5f071f1892256b6425a2bd29c91efadeedaafa9b3ac306b2e24695b3eea7c",
+    "examples/ch27/export_crypto.py": "1a73f17e8634120180f4228ba570528fb671879ca00ac766b25719bf16ad8eb8",
+    "examples/ch28/cancellation.py": "d19d2c7ceabd6737d5fd2fc530ec02fe14c9b7aa52c5ed19b5bc14f3aece001b",
+    "examples/ch28/export_queue.py": "523f9a459e93170ddfcbe71cdde0719bbf82d0a58ca93ac46c7e1b2d9d857516",
+    "examples/ch42/capstone.py": "3780eff1186540f7699cb7d8aba7e4dfe6edd966714851bf226077d8c3571438",
+    "examples/ch42/demo.py": "53332617e6656a0d8ce82152df078b00e33d3153e37aa9e8bfbfde09ffc37cff",
+    "examples/ch42/fixtures.py": "453ed1bd44a9778d8219326f829fbff40afc797510b135d92e31a1636c077837",
+    "examples/ch42/requirements-web.txt": "e5bd58a7400eea6892c27d0b9ea3b9083ecbd060f57e1735be066bfd906dcdfe",
+    "examples/ch42/requirements.txt": "8b5c18678b29b5e8e0fb586a35ac1dce3ccd9da321e8f12ace0e118350b4e568",
+    "examples/ch42/test_capstone.py": "e94b3e12777bbd11671f7633d91ec85bacebad6b3d2d38ab7b44cc850a56d1b8",
+    "examples/ch42/test_web.py": "f0667026d06b9e9aab51d773b7cfd524eb9240e3b892899a055917637d4c08ca",
+    "examples/ch42/web.py": "bcda44e7fc0536f5fa2a7eea120f74ae1b65de4f5313e584d7c7c78db59ee8a4",
+    "examples/ch42/workers.py": "46965a94a276c43884806ee5228a355896d5d06acbfcc2360f5b760824003045"
+  },
+  "builder_sha256": "aae208cd7cf2edd19aa7a06a041d12bf9f2dc70faae8932a0531913b9f155bba",
+  "provenance": "local unsigned build record; no SLSA level claim"
+}
